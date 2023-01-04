@@ -1,0 +1,300 @@
+In this course , It's all about concenpts, it only contains few codes
+
+CHAPTER 1 : RELATIONAL DATABASES
+
+
+1.) DATABASES
+
+Data organization
+If you'd like to use SQL to gain insights from data, understanding the organization of a database is an important first step. Take a look at the database below. Which of the following statements correctly describes its organization?
+
+Answer:
+This is a relational database containing three tables: employees, job_levels, and departments
+
+
+Database advantages
+Imagine you are part of a discussion at work about whether or not to create a database. You've learned about several advantages of storing data in a database rather than other traditional formats like spreadsheets. See if you can remember what they are!
+
+Instructions
+100XP
+Determine whether or not each statement is an advantage of databases.
+
+Advantage
+Secured with encryption
+More storage Many people can use at once 
+
+Not an advantage
+Fast and easy setup
+Can easily all data at once
+
+
+2.) TABLES
+
+
+Picking a unique ID
+You've learned that a unique identifier is a unique value that identifies a record so that it can be distinguished from other records in the same table.
+
+Which of the fields do you think is best suited to be a unique identifier?
+
+Answer
+ID
+
+
+
+Setting the table in style
+Imagine that you are designing a database and the following table has been suggested. Your task is to provide feedback on how this table could be improved. Use the skills you learned in the last video to critique it!
+
+A table called Customers
+
+Instructions
+100XP
+Move each card to the proper bucket based on whether or not it is a good suggestion for improvement.
+
+Suggest for Improvement
+The customers field should be renamed.
+The table name should not be capitalized. 
+The field names should be made singular.
+
+Do not suggest for Improvement 
+Underscores in the field names should be replaced with spaces.
+The field names should be capitalized
+The table name should be made singular
+
+
+
+
+
+Our very own table
+We've set up a database inside this course, and the books table is available in the exercise. You'll use SQL to query this table in the next chapter, but for now, it's time to explore what data books holds!
+
+Your task is to choose the option below that best describes the information contained in books. There's no need to do any coding in this exercise; you can answer this question by looking at the books table in the console next to the words "query result." Because some book titles are long, you may need to scroll to the right in order to see all the information that the books table contains.
+
+Answer
+books contains fields for id, title, author, year, and genre.
+
+
+3.) DATA
+
+At your service
+Now that you know more about how data is stored, it's time to test those skills!
+
+Select the statement about database storage that is false.
+
+Answer:
+
+Servers are usually personal computers such as laptops.
+
+That's right! While it is technically possible for a laptop to be a server, laptops aren't well suited to the job since they are not powerful enough to handle many requests at once and don't have as much storage capacity as larger computers.
+
+Finding data types
+Imagine that you are starting a new job and have just started getting to know your new employer's database. You know that it's important to know the data type—such as VARCHAR, INT, or NUMERIC—corresponding to each field in a table. Where could you find this information?
+
+Answer:
+You can find this information by looking at a database schema.
+
+
+
+
+Choice of type
+You've learned that when a table is created, a data type must be indicated for each field. Choosing the correct data type allows the data to be stored correctly and makes certain operations associated with that data type available. For example, mathematical operations can be performed on NUMERIC and INT data types, but not on VARCHAR data. Thus, it makes sense to store numerical values as NUMERIC or INT so that you can perform math operations on them if needed.
+
+In this exercise, you'll practice selecting the proper data type for your data!
+
+Instructions
+100XP
+Drag the field description to the bucket indicating the best data type to use for that field.
+
+VARCHAR 
+Product reviews written by customers . 
+Phone numers such as 321-123-555.
+
+INT 
+Model year such as 2004. 
+Number of mailing list subscribers such as 9782.
+
+NUMERIC
+Weight in tons such as 5.67. 
+Product prices in dollars such as 63.75.
+
+
+
+CHAPTER 2 Querying
+
+1.) Introducing Queries
+
+SQL strengths
+Which of the below scenarios describes a situation in which using SQL would be useful?
+
+Answer:
+Large amounts of data about many different but related areas of a business are housed in a relational database.
+
+
+Developing SQL style
+Recall from the video that it's important to pay attention to the formatting of SQL queries in order to make them readable. This is especially helpful as you learn more keywords and your queries get longer.
+
+In this exercise, you'll review the below query about the patrons table. This code will run properly, but it is messy and hard to read. Your task is to determine which edits are appropriate to improve the query so that it follows best practices for SQL style.
+
+SELECT CARD_NUM, TOTAL_FINE 
+from patrons
+Here's a reminder about what the patrons table looks like!
+
+The patrons table
+
+Instructions
+100XP
+Drag each suggestion to the proper zone depending on whether or not it will improve the query's style.
+
+
+Make suggestion 
+Capitalize from  
+Add a ; at the end of the query 
+Make CARD_NUM and TOTAL_FINE lowercase
+
+Don't make suggestion
+Capitalize patrons 
+Make SELECT lowercase
+All code should be on just one line
+
+
+Querying the books table
+You're ready to practice writing your first SQL queries using the SELECT and FROM keywords. Recall from the video that SELECT is used to choose the fields that will be included in the result set, while FROM is used to pick the table in which the fields are listed.
+
+Feel free to explore books in the exercise. Let's zoom in on this table in the database schema to see the fields and data types it contains.
+
+Your task in this exercise is to practice selecting fields from books.
+
+books table fields and datatypes
+
+Instructions 1/3
+35 XP
+Use SQL to return a result set of all book titles included in the books table.
+
+-- Return all titles from the books table
+SELECT title
+FROM books;
+
+-- Select title and author from the books table
+SELECT title, author
+FROM books;
+
+Select all fields from the books table.
+
+SELECT *
+FROM books;
+
+
+
+Making queries DISTINCT
+You've learned that the DISTINCT keyword can be used to return unique values in a field. In this exercise, you'll use this understanding to find out more about the books table!
+
+There are 350 books in the books table, representing all of the books that our local library has available for checkout. But how many different authors are represented in these 350 books? The answer is surely less than 350. For example, J.K. Rowling wrote all seven Harry Potter books, so if our library has all Harry Potter books, seven books will be written by J.K Rowling. There are likely many more repeat authors!
+
+Instructions 1/2
+50 XP
+1
+Write SQL code that returns a result set with just one column listing the unique authors in the books table.
+
+
+-- Select unique authors from the books table
+SELECT DISTINCT author
+FROM books;
+
+
+Update the code to return the unique author and genre combinations in the books table.
+
+
+-- Select unique authors and genre combinations from the books table
+SELECT DISTINCT author, genre
+FROM books;
+
+
+Aliasing
+While the default column names in a SQL result set come from the fields they are created from, you've learned that aliasing can be used to rename these result set columns. This can be helpful for clarifying the intent or contents of the column.
+
+Your task in this exercise is to incorporate an alias into one of the SQL queries that you worked with in the previous exercise!
+
+Instructions
+100 XP
+Add an alias to the SQL query to rename the author column to unique_author in the result set.
+
+-- Alias author so that it becomes unique_author
+SELECT DISTINCT author as unique_author
+FROM books;
+
+
+VIEWing your query
+You've worked hard to create the below SQL query:
+
+SELECT DISTINCT author AS unique_author
+FROM books;
+What if you'd like to be able to refer to it later, or allow others to access and use the results? The best way to do this is by creating a view. Recall that a view is a virtual table: it's very similar to a real table, but rather than the data itself being stored, the query code is stored for later use.
+
+Instructions 1/2
+50 XP
+1
+2
+Add a single line of code that saves the results of the written query as a view called library_authors.
+
+-- Save the results of this query as a view called library_authors
+CREATE VIEW library_authors AS
+SELECT DISTINCT author AS unique_author
+FROM books;
+
+
+Check that the view was created by selecting all columns from library_authors.
+
+-- Your code to create the view:
+CREATE VIEW library_authors AS
+SELECT DISTINCT author AS unique_author
+FROM books;
+
+-- Select all columns from library_authors
+SELECT * 
+from library_authors;
+
+
+
+Comparing flavors
+The video introduced several differences between SQL Server and PostgreSQL. These are just two of many relational database systems available, but the differences are fairly representative of the types of differences you'll see between other SQL database systems and flavors as well.
+
+Instructions
+100XP
+Drag the statement to the database management system that it correctly describes.
+
+PostgreSQL 
+Developed at the University of California,Berkeley 
+Research funds provided by DARPA
+Free and open source  
+
+SQL Server 
+Queried using T-SQL 
+Created by Microsoft
+Has both free and enterprise versions
+
+
+Limiting results
+Let's take a look at a few of the genres represented in our library's books.
+
+Recall that limiting results is useful when testing code since result sets can have thousands of results! Queries are often written with a LIMIT of just a few records to test out code before selecting thousands of results from the database.
+
+Let's practice with LIMIT!
+
+Instructions
+100 XP
+Using PostgreSQL, select the genre field from the books table; limit the number of results to 10.
+
+-- Select the first 10 genres from books using PostgreSQL
+SELECT genre
+FROM books
+Limit 10;
+
+Translating between flavors
+In the previous exercise, you wrote the following code using PostgreSQL:
+
+SELECT genre
+FROM books
+LIMIT 10;
+The database in this course is a PostgreSQL database, so you won't be able to run SQL Server code in any of the exercises. What if you did want to update the above query to work with SQL Server, though? How would you do that?
+
+Answer:
+Replace LIMIT with TOP
