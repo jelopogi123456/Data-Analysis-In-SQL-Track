@@ -1,0 +1,848 @@
+Learning to COUNT()
+You saw how to use COUNT() in the video. Do you remember what it returns?
+
+Here is a query counting film_id. Select the answer below that correctly describes what the query will return.
+
+SELECT COUNT(film_id) AS count_film_id
+FROM reviews;
+Run the query in the console to test your theory!
+
+Answer:
+The number of records containing a film_id.
+
+
+
+Practice with COUNT()
+As you've seen, COUNT(*) tells you how many records are in a table. However, if you want to count the number of non-missing values in a particular field, you can call COUNT() on just that field.
+
+Let's get some practice with COUNT()! You can look at the data in the tables throughout these exercises by clicking on the table name in the console.
+
+Instructions 1/3
+35 XP
+1
+Count the number of records in the people table, aliasing the result as count_records.
+
+-- Count the number of records in the people table
+SELECT COUNT(*) as count_records
+FROM people;
+
+Count the number of records with a birthdate in the people table, aliasing the result as count_birthdate.
+
+-- Count the number of birthdates in the people table
+SELECT COUNT(birthdate) as count_birthdate
+FROM people;
+
+Count the languages and countries in the films table; alias as count_languages and count_countries.
+
+
+-- Count the languages and countries represented in the films table
+SELECT COUNT(language) as count_languages , COUNT(country) as count_countries
+
+from films;
+
+SELECT DISTINCT
+Often query results will include many duplicate values. You can use the DISTINCT keyword to select the unique values from a field.
+
+This might be useful if, for example, you're interested in knowing which languages are represented in the films table. See if you can find out what countries are represented in this table with the following exercises.
+
+Instructions 1/2
+50 XP
+1
+Return the unique countries represented in the films table using DISTINCT.
+
+-- Return the unique countries from the films table
+SELECT DISTINCT(country)
+from films;
+
+
+Return the number of unique countries represented in the films table, aliased as count_distinct_countries.
+
+-- Count the distinct countries from the films table
+SELECT COUNT(DISTINCT country) as count_distinct_countries
+from films;
+
+Order of execution
+SQL code is processed differently than other programming languages in that you need to let the processor know where to pull the data from before making selections.
+
+It's essential to know your code's order of execution to understand what results you'll get from your query and how to fix any errors that may come up.
+
+Instructions
+100XP
+Drag the SQL keywords into the order that they will be executed in from first (top) to last (bottom).
+
+SELECT
+FROM
+LIMIT
+
+
+Debugging errors
+Debugging is an essential skill for all coders, and it comes from making many mistakes and learning from them.
+
+In this exercise, you'll be given some buggy code that you'll need to fix.
+
+Instructions 1/3
+35 XP
+1
+Debug and fix the SQL query provided.
+
+-- Debug this code
+SELECT certification
+FROM films
+LIMIT 5;
+
+Find the two errors in this code; the same error has been repeated twice.
+
+-- Debug this code
+SELECT COUNNT(birthdate) AS count_birthdays
+FROM peeple;
+
+Find the two bugs in this final query.
+
+-- Debug this code
+SELECT COUNT(birthdate) AS count_birthdays
+FROM people;
+
+
+SQL best practices
+SQL style guides outline standard best practices for writing code.
+
+This exercise will present several SQL style tips. Your job will be to decide whether they are considered best practices.
+
+We'll be following Holywell's style guide.
+
+Instructions
+100XP
+Drag and drop the items into the correct zone.
+
+BEST PRACTICE 
+Use underscores in field names rather than spaces 
+End queries with a semicolon 
+Capitalize keywords  
+Poor Practice 
+Write the query on one line 
+Don't capitalize keywords
+Write lots of queries with no semicolon
+
+
+Formatting
+Readable code is highly valued in the coding community and professional settings. Without proper formatting, code and results can be difficult to interpret. You'll often be working with other people that need to understand your code or be able to explain your results, so having a solid formatting habit is essential.
+
+In this exercise, you'll correct poorly written code to better adhere to SQL style standards.
+
+Instructions
+100 XP
+Adjust the sample code so that it is in line with standard practices.
+
+-- Rewrite this query
+SELECT person_id, role 
+FROM roles 
+LIMIT 10;
+
+Non-standard fields
+You may occasionally receive a dataset with poorly named fields. Ideally, you would fix these, but you can work around it with some added punctuation in this instance.
+
+A sample query and schema have been provided; imagine you need to be able to run it with a non-standard field name. Select the multiple-choice answer that would correctly fill in the blank to return both a film's id and its number of Facebook likes for all reviews:
+
+SELECT film_id, ___
+FROM reviews;
+
+
+Non-standard fields
+You may occasionally receive a dataset with poorly named fields. Ideally, you would fix these, but you can work around it with some added punctuation in this instance.
+
+A sample query and schema have been provided; imagine you need to be able to run it with a non-standard field name. Select the multiple-choice answer that would correctly fill in the blank to return both a film's id and its number of Facebook likes for all reviews:
+
+SELECT film_id, ___
+FROM reviews;
+
+
+
+Filtering results
+The WHERE clause allows you to filter based on text and numeric values in a table using comparison operators.
+
+What does the following query return?
+
+SELECT title
+FROM films
+WHERE release_year > 2000;
+
+
+Films released after the year 2000
+
+Using WHERE with numbers
+Filtering with WHERE allows you to analyze your data better. You may have a dataset that includes a range of different movies, and you need to do a case study on the most notable films with the biggest budgets. In this case, you'll want to filter your data to a specific budget range.
+
+Now it's your turn to use the WHERE clause to filter numeric values!
+
+Instructions 1/3
+35 XP
+1
+Select the film_id and imdb_score from the reviews table and filter on scores higher than 7.0.
+
+-- Select film_ids and imdb_score with an imdb_score over 7.0
+SELECT film_id , imdb_score
+FROM reviews 
+WHERE imdb_score > 7.0
+
+
+Select the film_id and facebook_likes of the first ten records with less than 1000 likes from the reviews table.
+
+
+-- Select film_ids and facebook_likes for ten records with less than 1000 likes 
+SELECT film_id, facebook_likes
+FROM reviews
+WHERE facebook_likes < 1000
+LIMIT 10;
+
+
+Count how many records have a num_votes of at least 100,000; use the alias films_over_100K_votes.
+-- Count the records with at least 100,000 votes
+SELECT COUNT(*) AS films_over_100K_votes
+FROM reviews
+WHERE num_votes > 100000;
+
+
+Using WHERE with text
+WHERE can also filter string values.
+
+Imagine you are part of an organization that gives cinematography awards, and you have several international categories. Before you confirm an award for every language listed in your dataset, it may be worth seeing if there are enough films of a specific language to make it a fair competition. If there is only one movie or a significant skew, it may be worth considering a different way of giving international awards.
+
+Let's try this out!
+
+Instructions
+100 XP
+Select and count the language field using the alias count_spanish.
+Apply a filter to select only Spanish from the language field.
+
+-- Count the Spanish-language films
+SELECT COUNT(language) as count_spanish
+FROM films
+WHERE language = 'Spanish';
+
+
+Using AND
+The following exercises combine AND and OR with the WHERE clause. Using these operators together strengthens your queries and analyses of data.
+
+You will apply these new skills now on the films database.
+
+Instructions 1/3
+1 XP
+1
+Select the title and release_year for all German-language films released before 2000.
+
+-- Select the title and release_year for all German-language films released before 2000
+SELECT title, release_year
+FROM films
+WHERE release_year < 2000
+	AND language = 'German';
+  
+  Update the query from the previous step to show German-language films released after 2000 rather than before.
+  
+  -- Update the query to see all German-language films released after 2000
+SELECT title, release_year
+FROM films
+WHERE release_year > 2000
+	AND language = 'German';
+  
+Select all details for German-language films released after 2000 but before 2010 using only WHERE and AND.
+
+-- Select all records for German-language films released after 2000 and before 2010
+SELECT *
+FROM films
+WHERE release_year > 2000
+	AND release_year < 2010
+	AND language = 'German';
+  
+Using OR
+This time you'll write a query to get the title and release_year of films released in 1990 or 1999, which were in English or Spanish and took in more than $2,000,000 gross.
+
+It looks like a lot, but you can build the query up one step at a time to get comfortable with the underlying concept in each step. Let's go!
+
+Instructions 1/3
+35 XP
+1
+2
+3
+Select the title and release_year for films released in 1990 or 1999 using only WHERE and OR.
+
+
+-- Find the title and year of films from the 1990 or 1999
+SELECT title,release_year
+FROM films
+WHERE release_year = 1990
+OR release_year = 1999
+
+Filter the records to only include English or Spanish-language films.
+
+SELECT title, release_year
+FROM films
+WHERE (release_year = 1990 OR release_year = 1999)
+-- Add a filter to see only English or Spanish-language films
+	AND (language = 'Spanish' OR language = 'English');
+  
+  Finally, restrict the query to only return films worth more than $2,000,000 gross.
+
+SELECT title, release_year
+FROM films
+WHERE (release_year = 1990 OR release_year = 1999)
+	AND (language = 'English' OR language = 'Spanish')
+-- Filter films with more than $2,000,000 gross
+	AND (gross > 2000000);
+  
+  
+Using BETWEEN
+Let's use BETWEEN with AND on the films database to get the title and release_year of all Spanish-language films released between 1990 and 2000 (inclusive) with budgets over $100 million.
+
+We have broken the problem into smaller steps so that you can build the query as you go along!
+
+Instructions 1/4
+25 XP
+1
+
+Select the title and release_year of all films released between 1990 and 2000 (inclusive) using BETWEEN.
+-- Select the title and release_year for films released between 1990 and 2000
+SELECT title,release_year 
+from films
+WHERE release_year
+BETWEEN 1990 AND 2000;
+
+Build on your previous query to select only films with a budget over $100 million.
+
+
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+-- Narrow down your query to films with budgets > $100 million
+	AND (budget > 100000000);
+  
+  Now, restrict the query to only return Spanish-language films.
+
+
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+	AND budget > 100000000
+-- Restrict the query to only Spanish-language films
+	AND (language = 'Spanish');
+  
+  Finally, amend the query to include all Spanish-language or French-language films with the same criteria.
+
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+	AND budget > 100000000
+-- Amend the query to include Spanish or French-language films
+	AND (language = 'Spanish' or language = 'French');
+  
+  
+  LIKE and NOT LIKE
+The LIKE and NOT LIKE operators can be used to find records that either match or do not match a specified pattern, respectively. They can be coupled with the wildcards % and _. The % will match zero or many characters, and _ will match a single character.
+
+This is useful when you want to filter text, but not to an exact word.
+
+Do the following exercises to gain some practice with these keywords.
+
+Instructions 1/3
+35 XP
+1
+Select the names of all people whose names begin with 'B'.
+
+-- Select the names that start with B
+SELECT name
+from people
+WHERE name LIKE 'B%';
+
+Select the names of people whose names have 'r' as the second letter.
+
+
+SELECT name
+FROM people
+-- Select the names that have r as the second letter
+WHERE name LIKE '_r%'
+
+Select the names of people whose names don't start with 'A'.
+
+SELECT name
+FROM people
+-- Select names that don't start with A
+WHERE name NOT LIKE 'A%';
+
+WHERE IN
+You now know you can query multiple conditions using the IN operator and a set of parentheses. It is a valuable piece of code that helps us keep our queries clean and concise.
+
+Try using the IN operator yourself!
+
+Instructions 1/3
+35 XP
+1
+Select the title and release_year of all films released in 1990 or 2000 that were longer than two hours.
+
+-- Find the title and release_year for all films over two hours in length released in 1990 and 2000
+SELECT title, release_year
+from films
+WHERE release_year IN (1990,2000)
+AND duration > 120;
+
+Select the title and language of all films in English, Spanish, or French using IN.
+
+-- Find the title and language of all films in English, Spanish, and French
+SELECT title , language
+from films
+WHERE language in ('English', 'Spanish', 'French')
+
+Select the title, certification and language of all films certified NC-17 or R that are in English, Italian, or Greek.
+
+-- Find the title, certification, and language all films certified NC-17 or R that are in English, Italian, or Greek
+SELECT title, certification , language
+from films
+WHERE certification IN ('NC-17' , 'R')
+AND language IN ('English' , 'Italian', 'Greek');
+
+Combining filtering and selecting
+Time for a little challenge. So far, your SQL vocabulary from this course includes COUNT(), DISTINCT, LIMIT, WHERE, OR, AND, BETWEEN, LIKE, NOT LIKE, and IN. In this exercise, you will try to use some of these together. Writing more complex queries will be standard for you as you become a qualified SQL programmer.
+
+As this query will be a little more complicated than what you've seen so far, we've included a bit of code to get you started. You will be using DISTINCT here too because, surprise, there are two movies named 'Hamlet' in this dataset!
+
+Follow the instructions to find out what 90's films we have in our dataset that would be suitable for English-speaking teens.
+
+Instructions
+100 XP
+Count the unique titles from the films database and use the alias provided.
+Filter to include only movies with a release_year from 1990 to 1999, inclusive.
+Add another filter narrowing your query down to English-language films.
+Add a final filter to select only films with 'G', 'PG', 'PG-13' certifications.
+
+-- Count the unique titles
+SELECT COUNT(DISTINCT title) AS nineties_english_films_for_teens
+FROM films
+-- Filter to release_years to between 1990 and 1999
+WHERE release_year BETWEEN 1990 AND 1999
+-- Filter to English-language films
+	AND language = 'English'
+-- Narrow it down to G, PG, and PG-13 certifications
+	AND certification IN ('G', 'PG', 'PG-13');
+  
+  What does NULL mean?
+I hope you were paying attention in the video. Pop quiz: What does NULL represent?
+
+A missing value
+
+
+Practice with NULLs
+Well done. Now that you know what NULL means and what it's used for, it's time for some more practice!
+
+Let's explore the films table again to better understand what data you have.
+
+Instructions 1/2
+50 XP
+1
+Select the title of every film that doesn't have a budget associated with it and use the alias no_budget_info.
+
+-- List all film titles with missing budgets
+SELECT title as no_budget_info
+FROM films
+WHERE budget IS NULL;
+
+
+Count the number of films with a language associated with them and use the alias count_language_known.
+
+-- Count the number of films we have language data for
+SELECT COUNT(language) as count_language_known
+from films
+WHERE language IS NOT NULL;
+
+
+
+Aggregate functions and data types
+Aggregate functions are another valuable tool for the SQL programmer. They are used extensively across businesses to calculate important metrics, such as the average cost of making a film.
+
+You know five different aggregate functions:
+
+-AVG()
+
+-SUM()
+
+-MIN()
+
+-MAX()
+
+-COUNT()
+
+Test your knowledge of what data types they are compatible with.
+
+Instructions
+100XP
+Classify the function based on what data type it is compatible with.
+
+Numerical Data Only 
+ 
+SUM() 
+AVG()   
+
+Various data types
+Count()
+MIN() 
+MAX()
+
+
+Practice with aggregate functions
+Now let's try extracting summary information from a table using these new aggregate functions. Summarizing is helpful in real life when extracting top-line details from your dataset. Perhaps you'd like to know how old the oldest film in the films table is, what the most expensive film is, or how many films you have listed.
+
+Now it's your turn to get more insights about the films table!
+
+Instructions 2/4
+25 XP
+Use the SUM() function to calculate the total duration of all films and alias with total_duration.
+
+-- Query the sum of film durations
+SELECT SUM(duration) AS total_duration
+FROM films;
+
+Calculate the average duration of all films and alias with average_duration.
+
+
+
+Find the most recent release_year in the films table, aliasing as latest_year.
+
+-- Find the latest release_year
+SELECT MAX(release_year) AS latest_year
+from films; 
+
+Find the duration of the shortest film and use the alias shortest_film.
+
+-- Find the duration of the shortest film
+SELECT MIN(duration) as shortest_film
+from films;
+
+
+Combining aggregate functions with WHERE
+When combining aggregate functions with WHERE, you get a powerful tool that allows you to get more granular with your insights, for example, to get the total budget of movies made from the year 2010 onwards.
+
+This combination is useful when you only want to summarize a subset of your data. In your film-industry role, as an example, you may like to summarize each certification category to compare how they each perform or if one certification has a higher average budget than another.
+
+Let's see what insights you can gain about the financials in the dataset.
+
+Instructions 1/4
+25 XP
+1
+Use SUM() to calculate the total gross for all films made in the year 2000 or later, and use the alias total_gross.
+
+-- Calculate the sum of gross from the year 2000 or later
+SELECT SUM(gross) as total_gross
+from films
+Where release_year >= 2000;
+
+
+Calculate the average amount grossed by all films whose titles start with the letter 'A' and alias with avg_gross_A.
+
+
+-- Calculate the average gross of films that start with A
+SELECT AVG(gross) as avg_gross_A
+from films
+Where title LIKE 'A%';
+
+
+
+
+Calculate the lowest gross film in 1994 and use the alias lowest_gross.
+
+
+-- Calculate the lowest gross film in 1994
+SELECT MIN(gross) as lowest_gross
+from films
+where release_year = 1994;
+
+
+
+
+Calculate the highest gross film between 2000 and 2012, inclusive, and use the alias highest_gross.
+
+-- Calculate the highest gross film released between 2000-2012
+SELECT MAX(gross) as highest_gross
+from films
+where release_year Between 2000 and 2012;
+
+Using ROUND()
+Aggregate functions work great with numerical values; however, these results can sometimes get unwieldy when dealing with long decimal values. Luckily, SQL provides you with the ROUND() function to tame these long decimals.
+
+If asked to give the average budget of your films, ten decimal places is not necessary. Instead, you can round to two decimal places to create results that make more sense for currency.
+
+Now you try!
+
+Instructions
+100 XP
+Calculate the average facebook_likes to one decimal place and assign to the alias, avg_facebook_likes.
+
+-- Round the average number of facebook_likes to one decimal place
+SELECT ROUND(AVG(facebook_likes), 1) as avg_facebook_likes
+from reviews
+
+
+ROUND() with a negative parameter
+A useful thing you can do with ROUND() is have a negative number as the decimal place parameter. This can come in handy if your manager only needs to know the average number of facebook_likes to the hundreds since granularity below one hundred likes won't impact decision making.
+
+Social media plays a significant role in determining success. If a movie trailer is posted and barely gets any likes, the movie itself may not be successful. Remember how 2020's "Sonic the Hedgehog" movie got a revamp after the public saw the trailer?
+
+Let's apply this to other parts of the dataset and see what the benchmark is for movie budgets so, in the future, it's clear whether the film is above or below budget.
+
+Instructions
+100 XP
+Calculate the average budget from the films table, aliased as avg_budget_thousands, and round to the nearest thousand.
+
+-- Calculate the average budget rounded to the thousands
+SELECT ROUND(AVG(budget),-3) as avg_budget_thousands
+from films;
+
+
+Using arithmetic
+SQL arithmetic comes in handy when your table is missing a metric you want to review. Suppose you have some data on movie ticket sales, but the table only has fields for ticket price and discount. In that case, you could combine these by subtracting the discount from the ticket price to get the amount the film-goer paid.
+
+You have seen that SQL can act strangely when dividing integers. What is the result if you divide a discount of two dollars by the paid_price of ten dollars to get the discount percentage?
+
+0
+
+
+
+Aliasing with functions
+Aliasing can be a lifesaver, especially as we start to do more complex SQL queries with multiple criteria. Aliases help you keep your code clean and readable. For example, if you want to find the MAX() value of several fields without aliasing, you'll end up with the result with several columns called max and no idea which is which. You can fix this with aliasing.
+
+Now, it's over to you to clean up the following queries.
+
+Instructions 1/3
+35 XP
+1
+Select the title and duration in hours for all films and alias as duration_hours; since the current durations are in minutes, you'll need to divide duration by 60.0.
+
+-- Calculate the title and duration_hours from films
+SELECT title, (duration / 60.0) as duration_hours
+FROM films;
+
+Calculate the percentage of people who are no longer alive and alias the result as percentage_dead.
+
+-- Calculate the percentage of people who are no longer alive
+SELECT COUNT(deathdate) * 100.0 / COUNT(*) AS percentage_dead
+FROM people;
+
+Find how many decades the films table covers by using MIN() and MAX() and alias as number_of_decades.
+
+-- Find the number of decades in the films table
+SELECT (MAX(release_year) - MIN(release_year)) / 10.0 AS number_of_decades
+FROM films;
+
+Rounding results
+You found some valuable insights in the previous exercise, but many of the results were inconveniently long. We forgot to round! We won't make you redo them all; however, you'll update the worst offender in this exercise.
+
+Instructions
+100 XP
+Update the query by adding ROUND() around the calculation and round to two decimal places.
+
+-- Round duration_hours to two decimal places
+SELECT title, ROUND(duration / 60.0, 2) AS duration_hours
+FROM films;
+
+
+Sorting text
+SQL provides you with the ORDER BY keyword to sort one or more fields from your data. It can do this multi-directionally and helps make results easy to interpret.
+
+How does ORDER BY sort a column of text values by default?
+
+Alphabetically (A-Z)
+
+
+Sorting single fields
+Now that you understand how ORDER BY works, you'll put it into practice. In this exercise, you'll work on sorting single fields only. This can be helpful to extract quick insights such as the top-grossing or top-scoring film.
+
+The following exercises will help you gain further insights into the film database.
+
+Instructions 1/2
+50 XP
+1
+Select the name of each person in the people table, sorted alphabetically.
+
+-- Select name from people and sort alphabetically
+SELECT name 
+from people
+ORDER BY name;
+
+Select the title and duration for every film, from longest duration to shortest.
+
+-- Select the title and duration from longest to shortest film
+SELECT title , duration 
+from films
+ORDER BY duration desc;
+
+Sorting multiple fields
+ORDER BY can also be used to sort on multiple fields. It will sort by the first field specified, then sort by the next, and so on. As an example, you may want to sort the people data by age and keep the names in alphabetical order.
+
+Try using ORDER BY to sort multiple columns.
+
+Instructions 1/2
+50 XP
+1
+Select the release_year, duration, and title of films ordered by their release year and duration, in that order.
+
+-- Select the release year, duration, and title sorted by release year and duration
+SELECT release_year, duration , title
+from films
+ORDER BY release_year,duration;
+
+
+Select the certification, release_year, and title from films ordered first by certification (alphabetically) and second by release year, starting with the most recent year.
+
+-- Select the certification, release year, and title sorted by certification and release year
+SELECT certification, release_year, title
+from films
+ORDER BY certification, release_year desc;
+
+GROUP BY single fields
+GROUP BY is a SQL keyword that allows you to group and summarize results with the additional use of aggregate functions. For example, films can be grouped by the certification and language before counting the film titles in each group. This allows you to see how many films had a particular certification and language grouping.
+
+In the following steps, you'll summarize other groups of films to learn more about the films in your database.
+
+Instructions 1/2
+50 XP
+1
+Select the release_year and count of films released in each year aliased as film_count.
+
+GROUP BY single fields
+GROUP BY is a SQL keyword that allows you to group and summarize results with the additional use of aggregate functions. For example, films can be grouped by the certification and language before counting the film titles in each group. This allows you to see how many films had a particular certification and language grouping.
+
+In the following steps, you'll summarize other groups of films to learn more about the films in your database.
+
+Instructions 1/2
+50 XP
+1
+Select the release_year and count of films released in each year aliased as film_count.
+
+-- Find the release_year and film_count of each year
+SELECT release_year, count(title) as film_count
+from films
+GROUP BY release_year;
+
+Select the release_year and average duration aliased as avg_duration of all films, grouped by release_year.
+
+
+-- Find the release_year and average duration of films for each year
+SELECT release_year, AVG(duration) AS avg_duration
+FROM films
+GROUP BY release_year;
+
+GROUP BY multiple fields
+GROUP BY becomes more powerful when used across multiple fields or combined with ORDER BY and LIMIT.
+
+Perhaps you're interested in learning about budget changes throughout the years in individual countries. You'll use grouping in this exercise to look at the maximum budget for each country in each year there is data available.
+
+Instructions
+100 XP
+Select the release_year, country, and the maximum budget aliased as max_budget for each year and each country; sort your results by release_year and country.
+
+-- Find the release_year, country, and max_budget, then group and order by release_year and country
+SELECT release_year,country, MAX(budget) as max_budget
+from films
+GROUP BY release_year,country
+ORDER BY release_year,country;
+
+Answering business questions
+In the real world, every SQL query starts with a business question. Then it is up to you to decide how to write the query that answers the question. Let's try this out.
+
+Which release_year had the most language diversity?
+
+Take your time to translate this question into code. We'll get you started then it's up to you to test your queries in the console.
+
+"Most language diversity" can be interpreted as COUNT(DISTINCT ___). Now over to you.
+
+2006
+
+
+Filter with HAVING
+Your final keyword is HAVING. It works similarly to WHERE in that it is a filtering clause, with the difference that HAVING filters grouped data.
+
+Filtering grouped data can be especially handy when working with a large dataset. When working with thousands or even millions of rows, HAVING will allow you to filter for just the group of data you want, such as films over two hours in length!
+
+Practice using HAVING to find out which countries (or country) have the most varied film certifications.
+
+Instructions
+100 XP
+Select country from the films table, and get the distinct count of certification aliased as certification_count.
+Group the results by country.
+Filter the unique count of certifications to only results greater than 10.
+
+-- Select the country and distinct count of certification as certification_count
+SELECT country , COUNT(DISTINCT certification) as certification_count
+from films
+-- Group by country
+GROUP BY COUNTRY
+-- Filter results to countries with more than 10 different certifications
+HAVING COUNT(DISTINCT certification) > 10;
+
+
+
+HAVING and sorting
+Filtering and sorting go hand in hand and gives you greater interpretability by ordering our results.
+
+Let's see this magic at work by writing a query showing what countries have the highest average film budgets.
+
+Instructions
+100 XP
+Select the country and the average budget as average_budget, rounded to two decimal, from films.
+Group the results by country.
+Filter the results to countries with an average budget of more than one billion (1000000000).
+Sort by descending order of the average_budget.
+
+-- Select the country and average_budget from films
+SELECT country, ROUND(AVG(budget), 2) AS average_budget
+FROM films
+-- Group by country
+GROUP BY country
+-- Filter to countries with an average_budget of more than one billion
+HAVING AVG(budget) > 1000000000
+-- Order by descending order of the aggregated budget
+ORDER BY average_budget DESC;
+
+
+All together now
+It's time to use much of what you've learned in one query! This is good preparation for using SQL in the real world where you'll often be asked to write more complex queries since some of the basic queries can be answered by playing around in spreadsheet applications.
+
+In this exercise, you'll write a query that returns the average budget and gross earnings for films each year after 1990 if the average budget is greater than 60 million.
+
+This will be a big query, but you can handle it!
+
+Instructions 1/4
+25 XP
+1
+Select the release_year for each film in the films table, filter for records released after 1990, and group by release_year.
+
+
+-- Select the budget for films released after 1990 grouped by year
+SELECT release_year 
+from films
+WHERE release_year > 1990
+group by release_year;
+
+Modify the query to include the average budget aliased as avg_budget and average gross aliased as avg_gross for the results we have so far.
+
+-- Modify the query to also list the average budget and average gross
+SELECT release_year, AVG(budget) as avg_budget , AVG(gross) as avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
+
+Modify the query once more so that only years with an average budget of greater than 60 million are included.
+
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+-- Modify the query to see only years with an avg_budget of more than 60 million
+HAVING AVG(budget) > 60000000;
+
+Finally, order the results from the highest average gross and limit to one.
+
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000;
+-- Order the results from highest to lowest average gross and limit to one
+ORDER BY gross DESC
+LIMIT 1;
