@@ -439,3 +439,481 @@ SELECT
   SUM(Medals) OVER (ORDER BY Athlete ASC) AS Max_Medals
 FROM Athlete_Medals
 ORDER BY Athlete ASC;
+
+
+Maximum country medals by year
+Getting the maximum of a country's earned medals so far helps you determine whether a country has broken its medals record by comparing the current year's earned medals and the maximum so far.
+
+Instructions
+100 XP
+Return the year, country, medals, and the maximum medals earned so far for each country, ordered by year in ascending order.
+
+
+WITH Country_Medals AS (
+  SELECT
+    Year, Country, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country IN ('CHN', 'KOR', 'JPN')
+    AND Medal = 'Gold' AND Year >= 2000
+  GROUP BY Year, Country)
+
+SELECT
+  -- Return the max medals earned so far per country
+  Country,
+  Year,
+  Medals,
+  MAX(Medals) OVER (PARTITION BY country
+                ORDER BY Year ASC) AS Max_Medals
+FROM Country_Medals
+ORDER BY Country ASC, Year ASC;
+
+Minimum country medals by year
+So far, you've seen MAX and SUM, aggregate functions normally used with GROUP BY, being used as window functions. You can also use the other aggregate functions, like MIN, as window functions.
+
+Instructions
+100 XP
+Return the year, medals earned, and minimum medals earned so far.
+
+WITH France_Medals AS (
+  SELECT
+    Year, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country = 'FRA'
+    AND Medal = 'Gold' AND Year >= 2000
+  GROUP BY Year)
+
+SELECT
+  Year,
+  Medals,
+  MIN(Medals) OVER (ORDER BY year ASC) AS Min_Medals
+FROM France_Medals
+ORDER BY Year ASC;
+
+Number of rows in a frame
+How many rows does the following frame span?
+
+ROWS BETWEEN 3 PRECEDING AND 2 FOLLOWING
+
+6
+
+
+
+
+Moving maximum of Scandinavian athletes' medals
+Frames allow you to restrict the rows passed as input to your window function to a sliding window for you to define the start and finish.
+
+Adding a frame to your window function allows you to calculate "moving" metrics, inputs of which slide from row to row.
+
+Instructions
+100 XP
+Return the year, medals earned, and the maximum medals earned, comparing only the current year and the next year.
+
+WITH Scandinavian_Medals AS (
+  SELECT
+    Year, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country IN ('DEN', 'NOR', 'FIN', 'SWE', 'ISL')
+    AND Medal = 'Gold'
+  GROUP BY Year)
+
+SELECT
+  -- Select each year's medals
+  Year,
+  Medals,
+  -- Get the max of the current and next years'  medals
+  MAX(Medals) OVER (ORDER BY Year ASC
+                    ROWS BETWEEN CURRENT ROW
+                    AND 1 FOLLOWING) AS Max_Medals
+FROM Scandinavian_Medals
+ORDER BY Year ASC;
+
+Moving maximum of Chinese athletes' medals
+Frames allow you to "peek" forwards or backward without first using the relative fetching functions, LAG and LEAD, to fetch previous rows' values into the current row.
+
+Instructions
+100 XP
+Return the athletes, medals earned, and the maximum medals earned, comparing only the last two and current athletes, ordering by athletes' names in alphabetical order.
+
+
+WITH Chinese_Medals AS (
+  SELECT
+    Athlete, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country = 'CHN' AND Medal = 'Gold'
+    AND Year >= 2000
+  GROUP BY Athlete)
+
+SELECT
+  -- Select the athletes and the medals they've earned
+  athlete,
+  Medals,
+  -- Get the max of the last two and current rows' medals 
+  MAX(Medals) OVER (ORDER BY athlete ASC
+            ROWS BETWEEN 2 Preceding
+            AND Current Row) AS Max_Medals
+FROM Chinese_Medals
+ORDER BY Athlete ASC;
+
+
+Moving average's frame
+If you want your moving average to cover the last 3 and current Olympic games, how would you define its frame?
+
+ROWS BETWEEN 3 PRECEDING AND CURRENT ROW
+
+Moving average of Russian medals
+Using frames with aggregate window functions allow you to calculate many common metrics, including moving averages and totals. These metrics track the change in performance over time.
+
+Instructions
+100 XP
+Calculate the 3-year moving average of medals earned.
+
+WITH Russian_Medals AS (
+  SELECT
+    Year, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country = 'RUS'
+    AND Medal = 'Gold'
+    AND Year >= 1980
+  GROUP BY Year)
+
+SELECT
+  Year, Medals,
+  --- Calculate the 3-year moving average of medals earned
+  AVG(Medals) OVER
+    (ORDER BY Year ASC
+     ROWS BETWEEN
+     2 PRECEDING AND CURRENT ROW) AS Medals_MA
+FROM Russian_Medals
+ORDER BY Year ASC;
+
+Moving total of countries' medals
+What if your data is split into multiple groups spread over one or more columns in the table? Even with a defined frame, if you can't somehow separate the groups' data, one group's values will affect the average of another group's values.
+
+Instructions
+100 XP
+Calculate the 3-year moving sum of medals earned per country.
+
+WITH Country_Medals AS (
+  SELECT
+    Year, Country, COUNT(*) AS Medals
+  FROM Summer_Medals
+  GROUP BY Year, Country)
+
+SELECT
+  Year, Country, Medals,
+  -- Calculate each country's 3-game moving total
+  SUM(Medals) OVER
+    (PARTITION BY country
+     ORDER BY Year ASC
+     ROWS BETWEEN
+     3 Preceding AND current row) AS Medals_MA
+FROM Country_Medals
+ORDER BY Country ASC, Year ASC;
+
+WITH Country_Medals AS (
+  SELECT
+    Year, Country, COUNT(*) AS Medals
+  FROM Summer_Medals
+  GROUP BY Year, Country)
+
+SELECT
+  Year, Country, Medals,
+  -- Calculate each country's 3-game moving total
+  SUM(Medals) OVER
+    (PARTITION BY country
+     ORDER BY Year ASC
+     ROWS BETWEEN
+     2 Preceding AND current row) AS Medals_MA
+FROM Country_Medals
+ORDER BY Country ASC, Year ASC;
+
+
+A basic pivot
+You have the following table of Pole Vault gold medalist countries by gender in 2008 and 2012.
+
+| Gender | Year | Country |
+|--------|------|---------|
+| Men    | 2008 | AUS     |
+| Men    | 2012 | FRA     |
+| Women  | 2008 | RUS     |
+| Women  | 2012 | USA     |
+Pivot it by Year to get the following reshaped, cleaner table.
+
+| Gender | 2008 | 2012 |
+|--------|------|------|
+| Men    | AUS  | FRA  |
+| Women  | RUS  | USA  |
+Instructions
+100 XP
+Create the correct extension.
+Fill in the column names of the pivoted table.
+
+-- Create the correct extention to enable CROSSTAB
+CREATE EXTENSION IF NOT EXISTS tablefunc;
+
+SELECT * FROM CROSSTAB($$
+  SELECT
+    Gender, Year, Country
+  FROM Summer_Medals
+  WHERE
+    Year IN (2008, 2012)
+    AND Medal = 'Gold'
+    AND Event = 'Pole Vault'
+  ORDER By Gender ASC, Year ASC;
+-- Fill in the correct column names for the pivoted table
+$$) AS ct (Gender VARCHAR,
+           "2008" VARCHAR,
+           "2012" VARCHAR)
+
+ORDER BY Gender ASC;
+
+Pivoting with ranking
+You want to produce an easy scannable table of the rankings of the three most populous EU countries by how many gold medals they've earned in the 2004 through 2012 Olympic games. The table needs to be in this format:
+
+| Country | 2004 | 2008 | 2012 |
+|---------|------|------|------|
+| FRA     | ...  | ...  | ...  |
+| GBR     | ...  | ...  | ...  |
+| GER     | ...  | ...  | ...  |
+You'll need to count the gold medals each country has earned, produce the ranks of each country by medals earned, then pivot the table to this shape.
+
+Instructions 1/3
+35 XP
+1
+2
+3
+Count the gold medals that France (FRA), the UK (GBR), and Germany (GER) have earned per country and year.
+
+-- Count the gold medals per country and year
+SELECT
+  Country,
+  year,
+  COUNT(*) AS Awards
+FROM Summer_Medals
+WHERE
+  Country IN ('FRA', 'GBR', 'GER')
+  AND Year IN (2004, 2008, 2012)
+  AND Medal = 'Gold'
+GROUP BY country, year
+ORDER BY Country ASC, Year ASC
+
+Select the country and year columns, then rank the three countries by how many gold medals they earned per year.
+
+WITH Country_Awards AS (
+  SELECT
+    Country,
+    Year,
+    COUNT(*) AS Awards
+  FROM Summer_Medals
+  WHERE
+    Country IN ('FRA', 'GBR', 'GER')
+    AND Year IN (2004, 2008, 2012)
+    AND Medal = 'Gold'
+  GROUP BY Country, Year)
+
+SELECT
+  Country,
+  Year,
+  -- Rank by gold medals earned per year
+  RANK() OVER
+    (PARTITION BY Year
+     ORDER BY Awards DESC) :: INTEGER AS rank
+FROM Country_Awards
+ORDER BY Country ASC, Year ASC;
+
+
+Pivot the query's results by Year by filling in the new table's correct column names.
+
+
+CREATE EXTENSION IF NOT EXISTS tablefunc;
+
+SELECT * FROM CROSSTAB($$
+  WITH Country_Awards AS (
+    SELECT
+      Country,
+      Year,
+      COUNT(*) AS Awards
+    FROM Summer_Medals
+    WHERE
+      Country IN ('FRA', 'GBR', 'GER')
+      AND Year IN (2004, 2008, 2012)
+      AND Medal = 'Gold'
+    GROUP BY Country, Year)
+
+  SELECT
+    Country,
+    Year,
+    RANK() OVER
+      (PARTITION BY Year
+       ORDER BY Awards DESC) :: INTEGER AS rank
+  FROM Country_Awards
+  ORDER BY Country ASC, Year ASC;
+-- Fill in the correct column names for the pivoted table
+$$) AS ct (Country VARCHAR,
+           "2004" INTEGER,
+           "2008" INTEGER,
+           "2012" INTEGER)
+
+Order by Country ASC;
+
+
+Country-level subtotals
+You want to look at three Scandinavian countries' earned gold medals per country and gender in the year 2004. You're also interested in Country-level subtotals to get the total medals earned for each country, but Gender-level subtotals don't make much sense in this case, so disregard them.
+
+Instructions
+100 XP
+Count the gold medals awarded per country and gender.
+Generate Country-level gold award counts.
+
+-- Count the gold medals per country and gender
+SELECT
+  country,
+  gender,
+  COUNT(*) AS Gold_Awards
+FROM Summer_Medals
+WHERE
+  Year = 2004
+  AND Medal = 'Gold'
+  AND Country IN ('DEN', 'NOR', 'SWE')
+-- Generate Country-level subtotals
+GROUP BY Country, rollup(gender)
+ORDER BY Country ASC, Gender ASC;
+
+
+All group-level subtotals
+You want to break down all medals awarded to Russia in the 2012 Olympic games per gender and medal type. Since the medals all belong to one country, Russia, it makes sense to generate all possible subtotals (Gender- and Medal-level subtotals), as well as a grand total.
+
+Generate a breakdown of the medals awarded to Russia per country and medal type, including all group-level subtotals and a grand total.
+
+Instructions
+100 XP
+Count the medals awarded per gender and medal type.
+Generate all possible group-level counts (per gender and medal type subtotals and the grand total).
+
+-- Count the medals per gender and medal type
+SELECT
+  Gender,
+  Medal,
+  COUNT(*) AS Awards
+FROM Summer_Medals
+WHERE
+  Year = 2012
+  AND Country = 'RUS'
+-- Get all possible group-level subtotals
+GROUP BY CUBE(Gender, Medal)
+ORDER BY Gender ASC, Medal ASC;
+
+
+Cleaning up results
+Returning to the breakdown of Scandinavian awards you previously made, you want to clean up the results by replacing the nulls with meaningful text.
+
+Instructions
+100 XP
+Turn the nulls in the Country column to All countries, and the nulls in the Gender column to All genders.
+
+SELECT
+  -- Replace the nulls in the columns with meaningful text
+  COALESCE(Country, 'ALL countries') AS Country,
+  COALESCE(Gender, 'All genders') AS Gender,
+  COUNT(*) AS Awards
+FROM Summer_Medals
+WHERE
+  Year = 2004
+  AND Medal = 'Gold'
+  AND Country IN ('DEN', 'NOR', 'SWE')
+GROUP BY ROLLUP(Country, Gender)
+ORDER BY Country ASC, Gender ASC;
+
+
+SELECT
+  -- Replace the nulls in the columns with meaningful text
+  COALESCE(Country, 'All countries') AS Country,
+  COALESCE(Gender, 'All genders') AS Gender,
+  COUNT(*) AS Awards
+FROM Summer_Medals
+WHERE
+  Year = 2004
+  AND Medal = 'Gold'
+  AND Country IN ('DEN', 'NOR', 'SWE')
+GROUP BY ROLLUP(Country, Gender)
+ORDER BY Country ASC, Gender ASC;
+
+Summarizing results
+After ranking each country in the 2000 Olympics by gold medals awarded, you want to return the top 3 countries in one row, as a comma-separated string. In other words, turn this:
+
+| Country | Rank |
+|---------|------|
+| USA     | 1    |
+| RUS     | 2    |
+| AUS     | 3    |
+| ...     | ...  |
+into this:
+
+USA, RUS, AUS
+Instructions 1/2
+50 XP
+1
+2
+Rank countries by the medals they've been awarded.
+
+WITH Country_Medals AS (
+  SELECT
+    Country,
+    COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE Year = 2000
+    AND Medal = 'Gold'
+  GROUP BY Country)
+
+  SELECT
+    Country,
+    -- Rank countries by the medals awarded
+    RANK() OVER (ORDER BY Medals DESC) AS Rank
+  FROM Country_Medals
+  ORDER BY Rank ASC;
+  
+  
+  Summarizing results
+After ranking each country in the 2000 Olympics by gold medals awarded, you want to return the top 3 countries in one row, as a comma-separated string. In other words, turn this:
+
+| Country | Rank |
+|---------|------|
+| USA     | 1    |
+| RUS     | 2    |
+| AUS     | 3    |
+| ...     | ...  |
+into this:
+
+USA, RUS, AUS
+Instructions 2/2
+
+2
+Return the top 3 countries by medals awarded as one comma-separated string.
+
+
+WITH Country_Medals AS (
+  SELECT
+    Country,
+    COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE Year = 2000
+    AND Medal = 'Gold'
+  GROUP BY Country),
+
+  Country_Ranks AS (
+  SELECT
+    Country,
+    RANK() OVER (ORDER BY Medals DESC) AS Rank
+  FROM Country_Medals
+  ORDER BY Rank ASC)
+
+-- Compress the countries column
+SELECT STRING_AGG(Country, ', ')
+FROM Country_Ranks
+-- Select only the top three ranks
+WHERE Rank <= 3;
