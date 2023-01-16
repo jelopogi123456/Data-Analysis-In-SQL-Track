@@ -1,0 +1,468 @@
+NO CODES HERE
+
+Motivating visualization
+To get an insight from a dataset, you can calculate summary statistics or run statistical models, but often it's easier to draw a plot.
+
+In this exercise, you can see the price of the Bitcoin cryptocurrency from the start of 2016 to the start of 2020. Columns in the table are filterable and sortable.
+
+Look at the Bitcoin prices on January the first each year. Which year began with the highest Bitcoin price?
+
+2018
+
+
+Continuous vs. categorical variables
+In order to choose an appropriate type of plot to draw, you need to be able to distinguish between continuous variables (roughly: "things you can do arithmetic on") and categorical variables (roughly: "things that can be classified").
+
+Instructions
+100XP
+State which of these variables are continuous and which are categorical.
+
+Continuous:
+Salary of employees. 
+Population of towns in Canada. 
+Percentage of questions answered correctly.
+Mass of Squirrels  
+
+Categorical:
+Species of squirrels. 
+Job title of employees.
+Provinces of towns in Canada.  
+Was the exam passed or failed?
+
+
+
+Interpreting histograms
+Here is a histogram of salaries for various jobs in Australia. Each row of the dataset is the average salary for that job, so the counts are counts of jobs.
+
+A histogram of Australian salaries
+
+Tip: This left-hand pane of the exercise containing text and instructions is resizable. If the plot is too small to see clearly, making the pane wider will increase the plot size. Move your mouse in-between the left-hand pane and the drag and drop portion of the exercise so a gray vertical bar appears. In Chrome, click and drag this bar to the right. In Firefox, click the bar, move your mouse right, then click again.
+
+Data Source: Tidy Tuesday
+
+Instructions
+100XP
+Categorize these statements about the histogram as true or false.
+
+True: 
+The histogram is right-skewed.
+The histogram is unimodal. 
+The most popular salary bracket is $40k to $60k. 
+
+
+False: 
+The most popular salary bracket is $560k to $580k. 
+The histogram is bimodal. 
+The histogram is left_skewed
+
+
+
+Adjusting bin width
+The appearance of a histogram is heavily influenced by the width of its bins: the intervals that determine where each bar lies on the x-axis. If the bins are too wide, you don't see enough detail in the shape of the distribution. If the bins are too narrow, the distribution can be obscured by noise. It's very difficult to know the "best" binwidth, until you physically look at the plot: draw lots of histograms with a range of binwidths until you find one that helps you answer the question.
+
+An agouti eating seeds
+
+Here you can see a histogram of agouti (a rodent) sightings from a camera trap on Barra Colorado Island in Panama. When an animal passed the camera, a photo was taken with a timestamp, so the histogram shows the distribution of the time of day when the agouti were most active.
+
+Which of these statements about the agouti activity is true?
+
+Data Source: Rowcliffle et al. 2014
+
+
+The agouti were most active for a couple of hours after sunrise (6:30am to 8:30am), and before sunset (4pm to 6m).
+
+
+
+
+Interpreting box plots
+Here are box plots of cigarette consumption per person in the USA from 1985 to 1995 (Alaska and Hawaii are not included). Each observation in the dataset is the average number of packets of cigarette smoked per person in one state in one year. Thus each box plot represents the distribution of 48 data points (because there are 48 US states included in the dataset).
+
+Box plots of cigarette consumption per capita in the USA, from 1985 to 1995.
+
+Data Source: Stock, James H. and Mark W. Watson (2003)
+
+Instructions
+100XP
+Categorize these statements about the box plots as true or false.
+
+True: 
+In 1990, three states were considered to have extreme values in the number of packets of cigarrettes smoked per capita.
+The median number of packets of cigarrettes smoked per capita was below 100 from 1991 onwards. 
+The lower quartile number of packets of cigarettes smoked per capita decreased every year from 1985 to 1995 . 
+
+False: The inter-quartile range of the number of packets of cigarettes smoked per capita decreased every year from 1985 to 1995. 
+The inter-quartile range of the number of packets of cigarettes smoked per capita was smallest in 1992. 
+The upper quartile number of packets of cigarettes smoked per capita decreased every year from 1985 to 1995
+
+
+
+
+Ordering box plots
+How you order the box plots affects the kinds of questions that are easy to answer.
+
+Here you can see the US cigarette consumption dataset again. This time each box plot represents the distribution of cigarette consumption over time for a given US state. Thus each box plot is formed from 11 data points representing 1985 to 1995.
+
+By default, the box plots are ordered alphabetically by state name. This makes it really easy to look up the details for a specific state, but difficult to answer questions about where the highest or lowest consumption can be found. Sorting the rows by median cigarette consumption makes those questions easier to answer.
+
+Inter-quartile range (IQR) measures the variation in the "middle half" of the population (from the 25th percentile to the 75th percentile). That means that sorting by the IQR makes it easier to answer questions about how much variation there was among the "typical" population.
+
+Which statement is false?
+
+
+Idaho has the fourth lowest median consumption.
+
+
+Interpreting scatter plots
+Scatter plots let you explore the relationship between two continuous variables.
+
+Here you can see a scatter plot of average life expectancy (on the y-axis) versus average length of schooling (on the x-axis) for countries around the world. Each point in the plot represents one country. A straight trend line from a linear regression model is shown.
+
+A scatter plot of average life expectancy versus average length of schooling, with a linear trend line.
+
+Data source: United Nations
+
+Instructions
+100XP
+Categorize these statements about the scatter plot as true or false.
+
+
+True: 
+As the average length of schooling increases , the average life expectancy typically increases too. 
+Every country with an average life expectancy of less than 60 years has an average length of schooling less than 7 years. 
+There is a positive correlation between the life expectancy and the length of schooling. 
+Exactly one coutnry averages more than 14 years schooling
+
+False: 
+If one country has a longer average length of schooling than another country, that country will also have a greater average life expectancy. 
+No countries have an average life expectancy of less than 55 years. 
+There is a negative correlation between the life expectancy and the length of schooling. 
+No countries have an average length of schooling less than 6 years and an average life expectancy of more than 75 years.
+
+
+
+Trends with scatter plots
+Adding trend lines to a scatter plot can make it easier to articulate the relationship between the two variables.
+
+Here you can see the life expectancy for each country again, this time plotted against the Gross National Income (GNI) per capita (a measure of how rich the country is). You have a choice between linear and logarithmic scales on the x-axis, and can add linear or curved trend lines.
+
+Which statement best describes the trend?
+
+Life expectancy increases linearly with the logarithm of GNI when GNI is between $1k and $50k.
+
+
+Interpreting line plots
+Line plots are excellent for comparing two continuous variables, where consecutive observations are connected somehow. A common type of line plot is to have dates or times on the x-axis, and a numeric quantity on the y-axis. In this case, "consecutive observations" means values on successive dates, like today and tomorrow. By drawing multiple lines on the same plot, you can compare values.
+
+The following line plot shows the percentage of households in the United States that adopted each of four technologies (automobiles, refrigerators, stoves, and vacuums) from 1930 to 1970.
+
+A line plot of technology adoption by households in the United States. The x-axis runs from 1930 to 1970, and the y-axis runs from 0 to 100 percent. There are four lines representing adoption of automobiles, refrigerators, stoves, and vacuums.
+
+Data source: Hannah Ritchie and Max Roser (2019) - Technology Adoption
+
+Instructions
+100XP
+Categorize these statements about the line plot as true or false.
+
+
+True :
+In 1930, adoption of automobiles was greater than 50%. 
+In 1945, two out of the four technologies had lower adoption than in 1940. 
+After 1940, adoption of refrigerators was always higher than adoption of stoves. 
+
+False: 
+After 1940, adoption of automobiles was always higher than adoption of vacuums. 
+In 1940, adoption of stoves was greater than adoption of automobiles.
+It took longer for refrigerators to go from 50% adoption to 75% adoption than it took vacuums.
+
+
+
+Logarithmic scales for line plots
+If you have a dataset where the values span several orders of magnitude, it can be easier to view them on a logarithmic scale.
+
+A subset of the COVID-19 coronavirus data is shown in the line plot. You saw in the video that most of the cases in early 2020 occurred in mainland China. You might wonder what is happening in the rest of the world. Here, the six countries with the most number of confirmed cases outside of mainland China are shown.
+
+On the linear scale, notice that moving up one grid line in the plot adds 20000. On the logarithmic scale, moving up one grid line in the plot multiplies by 4.
+
+Considering the six countries on the plot, which statement is true?
+
+
+
+On Feb 17, Germany had more cumulative confirmed cases of COVID-19 than France.
+
+
+
+Line plots without dates on the x-axis
+Although dates and times are the most common type of variable for the x-axis in line plot, other types of variable are possible.
+
+In the video, you saw data on the ages of juvenile offenders in Switzerland. That data was presented with time on the x-axis and one line for each age. Since that plot wasn't very satisfactory, we'll try again. This time, age is on the x-axis and there is one line for each year. In the plot you can see two separate clusters of lines representing different age profiles for the offenders.
+
+Which year did the change in age profile of juvenile offenders take place?
+
+Data source: Senior Attorney of the Canton of Zurich
+
+2011
+
+
+
+Interpreting bar plots
+Bar plots are a great way to see counts of each category in a categorical variable.
+
+The ESPN Top 100 famous athletes dataset has two categorical variables: country and sport.
+
+Explore the plots and determine which statement is false.
+
+
+Soccer players from the USA had more famous athletes than any other country/sport combination.
+
+
+Interpreting stacked bar plots
+If you care about percentages rather than counts, then stacked bar plots are often a good choice of plot.
+
+The dataset for this exercise relates to another question from the Health Survey for England. Adults aged 65 or more were asked how many "activities of daily living" (day-to-day tasks) they needed assistance with.
+
+Type show_plot in the DataCamp console and press ENTER to see the plot. It's interactive – hover your mouse over the bars to see the percentage for that block.
+
+Which statement is true?
+
+
+The group with the largest percentage of people needing no assistance was men aged 70-74.
+
+
+Interpreting dot plots
+Dot plots are similar to bar plots in that they show a numeric metric for each category of a categorical variable. They have two advantages over bar plots: you can use a log scale for the metric, and you can display more than one metric per category.
+
+Here is a dot plot of the social media followings of the ESPN 2017 top 100 famous athletes, with one row per athlete. Three metrics are shown for each athlete: the number of followers on Facebook, Instagram, and Twitter. Only the athletes for Basketball, Cricket, Soccer, and Tennis who had accounts on each platform are shown. Rows are sorted alphabetically for each sport.
+
+A dot plot of the number of social media followers for famous basketballers, cricketers, soccer players, and tennis players. The social media platforms are Facebook, Instagram, and Twitter.
+
+Based on the plot, which statement about the athlete's social media following is false?
+
+Soccer: Christiano Ronaldo has more Twitter followers than Marcelo Viera.
+
+Sorting dot plots
+As with box plots and bar plots, how you order the rows in a dot plot affects the kinds of questions that are easy to answer.
+
+Here you can see the Big Mac Index: the price of a McDonalds Big Mac in various countries around the world (in Jan 2020). The "Actual price" is the price converted to US dollars. The "GDP adjusted price" has an additional correction for the gross domestic product of a country. Roughly, if people earn less in a country, it will cost more using the adjusted price.
+
+By default, the rows in the dot plot are ordered alphabetically. This makes it really easy to look up the price for a specific country, but difficult to answer question about where the most expensive or least expensive Big Macs can be found. By sorting the rows by price, those questions are easier to answer.
+
+Which statement is true?
+
+Data source: The Economist
+
+
+Two countries have Big Macs that cost over 100 USD after adjusting for GDP.
+
+
+
+
+Another dimension for scatter plots
+If you have a scatter plot, but want to distinguish the points in some way based on another variable, then you have a few options. As discussed in the video, 3D plots are usually dreadful on a 2D screen, but there are other options to stick to x-y axes and still visualize the third dimension. You can change the color, size, transparency or shape of the points, or split the plot into multiple panels.
+
+Here you can see the dataset of house prices in Los Angeles county, USA, that you first encountered in Chapter 2.
+
+Explore different options for distinguishing points from the four cities, then determine which statement is false.
+
+
+Using different shapes provides the best way to distinguish points from each city, but makes it harder to see if there is a single trend across the whole dataset.
+
+
+Another dimension for line plots
+As with points in a scatter plot, you may often want to be able to distinguish several lines in a line plot. Like points, you can change the colors or transparency level, or use multiple panels. The two differences to points are that you can change line widths rather than point sizes, and you can change linetype (solid, dashes, or dots) rather than point shape.
+
+The line plot shows the stock price for five technology companies collectively known as "FAAMG": Facebook (FB), Apple (AAPL), Amazon (AMZN), Microsoft (MSFT), and Google (GOOG). The prices have been adjusted for dividends and splits, then scaled to be relative to their highest price over the time period so they are more easily comparable.
+
+Explore different options for distinguishing lines from the five companies, then determine which statement is false.
+
+Data source: Yahoo Finance
+
+All five companies began 2020 with a higher price than they had half way through 2019.
+
+
+
+
+Eye-catching colors
+Not all colors are as eye-catching as others. This can cause a problem for data visualization, because having some data point more obvious than others can bias the way you interpret a plot. Unless you specifically want to highlight some points, each data point should be as easy to look at as all the others.
+
+Here you can see the dataset from the camera trap in Panama. This time, the speed of the animal as they passed the camera is plotted against the time of day that they were caught on camera, and the agouti have been joined by another rodent, the paca.
+
+A paca next to a tree branch, with some seeds.
+
+Each version of the plot contains purple and yellow points, but in one version, the purple points are easier to perceive than the yellow points.
+
+Which statement is true?
+
+
+To ensure that all data points are equally perceivable, choose a qualitative, sequential, or diverging scale in hue-chroma-luminance colorspace.
+
+
+
+Qualitative, sequential, diverging
+There are three types of color scale, each designed to highlight different things in a visualization.
+
+Type	Purpose
+qualitative	Distinguish unordered categories
+sequential	Show ordering
+diverging	Show above or below a midpoint
+Here you can see the results of a survey about math anxiety from a class of students. Each question has its own row, and responses range from "Strongly Disagree" to "Neutral" to "Strongly Agree".
+
+Choose an appropriate color scale for the plot.
+
+Data source: Bai et al. (2009)
+
+
+
+Diverging
+
+
+
+Highlighting data
+Up to now we've focused on using color and other plot aesthetics to make all data points stand out as much as others. Usually that's a good idea, but occasionally you'll want to highlight specific data points.
+
+Here's the dataset of the greatest hip-hop songs of all time, from Chapter 2. Songs by two rappers at the center of the 1990s East Coast-West Coast hip-hop Rivalry, The Notorious B.I.G. and 2Pac, are colored differently.
+
+Use the sliders to control the highlighting of songs by these artists via point size, transparency, and chroma.
+
+How many songs for each artist made it onto the critics' list?
+
+The Notorious B.I.G. has 9 and 2Pac has 8.
+
+
+
+Interpreting pair plots
+To get a quick overview of a dataset, it's really helpful to draw a plot of the distribution of each variable, and the relationship between each pair of variables. A pair plot displays all these plots together in a matrix of panels. It shows a lot of information at once, so to interpret it, try looking at one panel at a time.
+
+Here you can see the Panamanian camera trap data for the agouti and paca, as well as three new species: coati, brocket, and peccary.
+
+A pair plot of activity for five animals: agouti, brocket, coati, paca, and peccary. The three variables are species, time, and speed.
+
+Instructions
+100XP
+Categorize these statements about the pair plot as true or false.
+
+True: 
+Most animals were travelling at less than 1 m/s when caught on camera. 
+There are more than 250 sightings of peccary in the dataset. 
+Paca is the only nocturnal animal in the dataset.  
+
+False: 
+The animal with the fastest 75th percentile speed on camera was an agouti.  
+All species were caught on camera most often around dawn (6am) and dusk (6pm) . 
+There is a strong negative correlation between time of sighting and speed of the animal.
+
+
+
+Interpreting correlation heatmaps
+If you want to find the relationship between many pairs of numeric variables, you can use a close relative of the pair plot, namely the correlation heatmap. It takes the correlation scores you saw from the pair plot, but rather than giving you lots of numbers to look at, it displays them using colors. A great use case for this is finding related products.
+
+Here's a dataset from a survey on scotch whisky consumption. In the correlation heatmap, each row and column shows a brand of scotch, and cells show that correlation between drinking one brand and drinking another within the past twelve months.
+
+A correlation heatmap of nine scotch whiskies.
+
+Data source: Bayesian Statistics & Marketing
+
+Instructions
+100XP
+Categorize these statements about the correlation heatmap as true or false.
+
+True: 
+People who drank The Singleton were unlikely to drink Chivas Regal. 
+There was no correlation between drinkers of Clan Macgregor and drinkers of Chivas Regal.
+People who drank Glenfiddich were also likely to drink Glenlivet.  
+
+False: People who drank Knockando were unlikely to drink Macallan
+People who drank Glenlivet were also likely to drink J & B.
+There was no correlation between drinkers of Johnnie Walker Red Label and drinkers of Johnnie Walker Black Label.
+
+
+Interpreting parallel coordinates plots
+Parallel coordinates plots are designed to help you view the relationship between many continuous variables at once.
+
+Here is a dataset of fatty acid levels in olive oils samples from six regions in Italy. Each line in the plot represents one oil sample. Since the region is a categorical variable, you have six parallel coordinates plots, one in each panel.
+
+A parallel coordinates plot of fatty acid levels in olive oils from six regions in Italy.
+
+Data source: Graphics of large datasets
+
+Instructions
+100XP
+Categorize these statements about the parallel coordinates plot as true or false.
+
+True: 
+Oils fro mCalabria in the South have a wide variety of levels of eicosenoic acid and stearic acid. 
+Oils from both regions in Sardinia have low levels of eicosenoic acid and high levels of linoleic acid. 
+Oils from both regions in the North have high elvels of oleic acid.  
+
+False:
+Oils from West-Liguria in the North have high levels of linolenic acid.
+Oils from South-Apulia in the South are more consistent in fatty acid levels than other regions.
+Oils from Inland-Sardinia in Sardinia have a wide variety of levels of oleic acid.
+
+
+
+
+Pie plots
+Pie plots (sometimes called pie charts) are extremely popular, but often difficult to interpret. They are just bar plots converted into polar coordinates, and humans are generally worse at perceiving angles accurately compared to lengths.
+
+Following on from the scotch whisky dataset in the last chapter, here's another dataset from the Health Survey for England, this time on alcohol consumption in English men aged 16 or more. Pie segments and bar heights represent percentages of responders.
+
+Look at the pie plot and the bar plot and determine which statement is true.
+
+
+All age groups had at least 50% of people drinking up to 14 units per week.
+
+Rose plots
+One good use case for polar coordinates is when the data is naturally circular, for example, when it is a compass direction. If you plot a histogram with polar coordinates, you get a rose plot.
+
+Here you can see a plot of wind direction data from a meteorological mast. Knowing the predominant wind direction is important for weather modeling and for determining where to site wind turbines. Wind measurements were taken at 10 minute intervals over an eight month period.
+
+Look at the histogram and rose plot, then determine which statement is true.
+
+Data Source: bReeze
+
+The predominant wind directions were N and SW.
+
+
+Bar plot axes
+When we look at a bar plot, we use the relative lengths of each bar to help interpret what is happening. If you don't include zero on the axis used for bar lengths, then the relative lengths of bars are distorted, and it is easy to be misled.
+
+Here is a bar plot of another question from the Health Survey for England, this time about people with asthma. ("Not asthmatic" means no asthma symptoms were reported, and no medication was taken for asthma in the previous 12 months.)
+
+Compare version of the plot with each y-axis, and determine which statement is true.
+
+The percentage of asthmatics is less than 15% for every age group.
+
+
+Dual axes
+One popular but terrible idea is to draw a scatter plot or line plot with two different y-axes. This typically happens when you have two metrics with different units, and different scales that you want to plot against a common x-axis. The problem is that by changing the relationship between the two axes, you can tell almost any story that you want with the data.
+
+Here you can see the stock prices of Microsoft (MSFT) and Amazon (AMZN) from 2017 to 2020. When you saw these in Chapter 3, each price had been adjusted to relative to the maximum for that company. That way each line was comparable. Here, the prices have been adjusted for dividends and splits but they have not been scaled relative to their maxima.
+
+Adjust the vertical position and steepness of the slope for the AMZN line, then determine which statement is true.
+
+
+You can't make a conclusion about the correlation of MSFT and AMZN from this plot.
+
+
+Chartjunk
+Chartjunk is anything in a plot that distracts from getting insight. That is, removing it would make the plot easier to understand.
+
+Here's the scatter plot of the greatest hip-hop songs from Chapter 2, this time with added bling.
+
+A scatter plot of critically acclaimed hip-hop songs over time, with added bling, such as a gold background and dollar signs instead of points.
+
+Which element of the plot is not chartjunk?
+
+Axis labels
+
+
+
+Multiple plots
+Sometimes a dataset is so complex that it takes several plots to explore properly. Rather than trying to find a single, perfect plot that captures all the insight, you can combine several plots into a report or – if you want to have fun – a dashboard.
+
+Here you can see the German Bundesrat (Federal Council) seats dataset in a dashboard of three plots. In the "by party" plots, values are colored according to each party's marketing brand color. The level of transparency is based on power: the primary party in a coalition is fully opaque, secondary parties are slightly transparent, and tertiary parties are very transparent.
+
+Explore the dashboard and determine which statement is false
+
+
+The SPD have more seats as the tertiary party in a coalition than any other party.
