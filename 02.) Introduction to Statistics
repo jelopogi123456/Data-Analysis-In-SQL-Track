@@ -1,1 +1,672 @@
+NO codes just lectures/exercises
 
+CHAPTER 1
+LESSON 1:
+1.) What is statistics?
+So what is statistics? The field of statistics is the practice and study of collecting and analyzing data. Statistics has two main branches. Descriptive or summary statistics are used to describe or summarize our data, while inferential statistics involve using samples to draw conclusions about the population they represent. We will discuss both in more detail, but first let's look at why statistics is so important!
+
+2.) Statistics is everywhere!
+We interact with statistics everyday. From sports announcers talking about player statistics, to tracking our personal finances, we are all in-tune with statistics.
+
+1 Image credits: https://unsplash.com/@jesusance; https://unsplash.com/@andretaissin; https://unsplash.com/@unarchive
+3.) What can statistics do?
+Statistics allows us to answer practical questions, such as: What is the average salary in the USA, or how many customer inquiries is a company likely to receive per week? It also has applications across society. We can use statistics to improve the safety of products or to help a government understand the needs of a population. Scientific breakthroughs are validated through the use of statistics, including the conclusion that Covid-19 vaccines were 89% effective in preventing severe disease in older adults in the United Kingdom.
+
+1 source: https://www.bmj.com/content/373/bmj.n1088
+4.) Limitations of statistics
+So far so good, but statistics does have its limitations. Statistics requires specific, measurable questions, rather than broad, open questions. For example, statistics can tell us if rock music is more popular than jazz, based on total sales, or whether women live longer than men. However, we can't use statistics to find out why relationships exist, such as why people like different types of music, or why women live longer than men.
+
+1 Image credit: https://unsplash.com/@mohammadmetri
+5.) Types of data: numeric
+Now we know what statistics can and can't do, let's define the common data types, which is important for determining how we can analyze our data. First, we have numeric, or quantitative data. This can be broken into two subtypes. Continuous data is measured on a continuous scale, taking any value, such as stock price. We also have interval, or count data. These are measured in whole numbers, such as counting how many cups of coffee people drink per day.
+
+1 Image credits: Stocks https://unsplash.com/@behy_studio
+6.) Visualizing numeric data
+A common way of visualizing the relationship between numeric data is to use a scatter plot. Here we have visualized the number of thefts in London, England, on the y-axis, against the number of vehicle offenses on the x-axis, where each dot represents a London borough and the amount of crime occurring determines the position. We see one borough has many more thefts than the rest, around 40000 in total, but can't identify which borough this is.
+
+1 Data source: Metropolitan Police Service, United Kingdom
+7.) Types of data: categorical
+Another data type is categorical, or qualitative data. There are two subtypes. First is nominal data, which describes unordered categories such as eye color. The second categorical data type is ordinal data, where the categories are ordered. For example, a survey may ask people's opinion on whether basketball is the best sport, with answers ranging from strongly disagree to strongly agree.
+
+1 Image credit: https://unsplash.com/@mango_quan
+8.) Visualizing categorical data
+We can visualize the relationship between categorical and numeric data by grouping the values, then performing some kind of aggregation. We can group our crimes data by London borough, which is nominal data, and display the number of thefts, which is interval data, for each borough. This is a great way to compare different categories. We can now see that Westminster is the borough with a high volume of theft!
+
+9.) Descriptive / Summary statistics
+Now we've looked at data types and common ways to visualize them, let's return to the two main branches of statistics. Descriptive, or summary statistics, are used to describe or summarize data. Using our data on London crime as an example, we can describe that thefts in Westminster account for around 36% of all thefts in the five boroughs shown here!
+
+10.)  Inferential statistics
+By contrast, inferential statistics is the process of using a sample to draw conclusions about a population. For example, we can survey 100 people on whether they purchase clothing after seeing social media advertising, and use this sample to infer what percentage of all people purchase clothing as a result of social media advertising.
+
+1 source: https://unsplash.com/@pickawood
+ Let's practice!
+Now let's check our understanding of statistics!
+
+
+
+
+Using statistics in the real-world
+Recall that statistics can help to answer specific, measurable questions.
+
+In this exercise, you have been provided with several real-world scenarios and need to select which one can be solved through the application of statistics.
+
+Answer:
+Testing whether a new model of car is safer than the current model?
+
+
+
+dentifying data types
+You saw that there are two main types of data: numeric and categorical.
+
+Numeric data can be classified as either continuous or count/interval, and categorical data can be classified as either nominal or ordinal. The data type determines which approaches are suitable when summarizing your data.
+
+You've been provided with several examples to classify as continuous, count, nominal, or ordinal data.
+
+Instructions
+100XP
+Map each example to its data type by dragging each item and dropping it into the correct data type.
+
+Continuous: 
+Height in centimeters. 
+Race car lap time.  
+
+Interval/count: 
+Count of t-shirts sold in a store. 
+Number of trees in a field.  
+
+Nominal: 
+Soccer player position.
+Employment status.  
+
+Ordinal:
+Customer satisfaction - unsatisfied, neutral, satisfied.
+Income status - low, middle, high.
+
+
+
+Descriptive vs. Inferential statistics
+Recall that there are two main branches of statistics—descriptive statistics and inferential statistics.
+
+Understanding what type of statistics is required for a given situation is an essential skill in order to draw accurate conclusions.
+
+Now you have the opportunity to check your knowledge of how these two branches of statistics are used in practice. You'll classify each scenario as a task for descriptive or inferential statistics.
+
+Instructions
+100XP
+Choose which type of statistics to use for each scenario.
+
+Descriptive: 
+Given data on al purchaes, what is the average amount spent percustomer?  
+Given data on all projects completed, what percentage were delivered on time?  
+
+Inferential: After surveying 100 adults on how many hours of sleep they get per night, what percentage of all adults sleep for at least 6 hours per night? 
+Given test scores for 50 students at one high, school , what is the average score for all students in that school?
+
+
+LESSON 2:
+1. Measures of center
+Now let's discuss summary statistics, starting with measures of center.
+
+2. Why are measures of center useful?
+So, why are measures of center useful? We might be asked what the average number of sales orders are per month at work, hear about the typical cost of a house, or wonder what the most common hair color is. Terminology like average, most common, and typical value are all examples of how measures of center are expressed in day-to-day life!
+
+1 Image credits: https://unsplash.com/@arnosenoner; https://unsplash.com/@brenoassis;
+3. Crime data
+We will use the crime dataset introduced in the previous video to review measures of center. Each row contains a London Borough and the count values for each type of crime over the past two years. Here is a preview of the first five rows.
+
+4. Crime data
+We can see there were 5067 burglaries in the London Borough of Barnet.
+
+5. Histograms
+Let's explore another way to visualize numeric data. A histogram takes data points and separates them into bins, or ranges of values. Here is a histogram of vehicle offenses with eight bins, each with a separate height corresponding to the number of London boroughs with a vehicle crime count that fits inside the respective bin. The peak in the middle shows nine London Boroughs had between 6000 and 7300 vehicle crimes in the past two years. Histograms are a great way to summarize numeric data, but we can also use descriptive statistics.
+
+6. What is the typical amount of vehicle crime in London?
+We could summarize the data by finding the typical amount of vehicle crime in a London Borough? To answer this, we need to determine what the typical, or center value of the data is. Unfortunately, this can be hard to determine through data visualization such as our histogram. We'll discuss three ways to calculate the center: mean, median, and mode.
+
+7. Measures of center: mean
+The mean, often called the average, is one of the most common ways of describing the center of the data. We calculate the mean by adding up all values and divide by the number of values. For example, to calculate the mean number of burglaries per London Borough we add up all values and divide by the number of boroughs, which is 32. This gives us approximately 3463 burglaries.
+
+8. Measures of center: mean
+Here we can see the mean value for each type of crime and overall, with theft having the largest mean.
+
+9. Measures of center: median
+Another measure of center is the median. This is the middle value for our data. Therefore, if we sort our data from smallest to largest, as shown here for burglaries per London Borough, 50% of values should be lower than the median, and 50% should be higher.
+
+10. Measures of center: median
+We have an even number of values as there are 32 boroughs, so we instead take the two values closest to the middle.
+
+11. Measures of center: median
+We add the two values then divide by two. The result is 3416-point-five, slightly lower than the mean.
+
+12. Measures of center: mode
+The third measure of center is the mode, or most frequent value. If we count occurrences of each crime across all London Boroughs, we can see the most frequent value is theft. If we are looking for the expected value of categorical data then the mode is generally the most suitable measure, since categories may not have an inherent numerical representation.
+
+13. Which measure to use?
+Which measure to use depends on the situation. Take this histogram of vehicle offenses for example. The shape of the plot is fairly symmetrical, with a count peaking in the middle and getting lower towards each side. When data is symmetrical the mean and median both work well. Notice they overlap on the plot?
+
+14. Which measure to use?
+Comparing this to robberies, the data is not symmetrical - piling up on the left and tailing off with one borough having a high number of robberies. When one value is substantially different to others we call this an outlier. This outlier pulls the mean towards it, while the median is less affected. This is because the mean calculation involves adding up all values, so larger values affect the result, where as the median just looks at the middle value. Therefore, when data is not symmetrical it is best to use the median to describe the data's typical value.
+
+
+
+
+
+
+
+
+LESSON 3:
+1. Measures of spread
+Now let's discuss another category of summary statistics - measures of spread.
+
+2. What is spread?
+Spread describes how far apart data points are. Here is a histogram of vehicle crimes across London Boroughs. Comparing this to a histogram of burglaries, we can see the spread is much narrower.
+
+3. Why is spread important?
+Spread is important because it tells us how much variety may occur in our data. For example, if t-shirts typically cost 30 dollars, but can be anywhere from 10 dollars to 200 dollars, then how likely is it we will find one equal to 30 dollars? Does this change if t-shirt costs are between 20 and 50 dollars? So what measures of spread exist?
+
+
+Chapter 2
+
+Lesson 1
+1 Image credit: https://unsplash.com/@uyk
+4. Range
+The first is the range, which is the difference between the maximum and minimum values. For example, here are the London Boroughs with the largest and smallest number of burglaries. The range would be 5,183 minus 1,432, highlighting that Kingston upon Thames had 3,751 fewer burglaries than Tower Hamlets in the last two years!
+
+5. Variance
+Another measure is variance, which calculates the average distance from each data point to the mean. This plot shows the distribution of crimes per London Borough, with the mean displayed as a vertical line. We can see one borough is much further from the mean.
+
+6. Variance
+To calculate the variance, we first measure the distance from each data point to the mean value. For example, the total number of crimes in the London Borough of Westminster is 94923, and the mean number of crimes across all boroughs is 47672. To calculate the distance, we subtract the mean from the number of crimes in Westminster, 94923 minus 47672.
+
+7. Variance
+We repeat this by calculating the distances for each borough and adding them up. Unfortunately, if we add up all the distances, then negative values will cancel out positives, so in this case we end up with an overall distance of zero.
+
+8. Variance
+To avoid this, we square each distance and add them together. This gives a total of over seven billion.
+
+9. Variance
+As the data represents all crime in London, the variance is the sum of the squared distances divided by the number of boroughs, which is 32. It's important to note that the variance is in squared units. In this case, the count of total crime squared.
+
+10. Standard deviation
+It's difficult to understand the count of total crime squared. Therefore, we can convert it to the units of our data by taking the square root of the variance, a measure known as the standard deviation. This gives us a value of 15,319. Generally, the closer the standard deviation is to zero, the more closely clustered the data is around the mean.
+
+11. Standard deviation in a histogram
+Here we can see how dispersed the data is by showing a distance of one and two standard deviations away from the mean!
+
+12. Quartiles
+We can also measure spread using quartiles, which are a way of splitting the data into four equal parts. Here, we see the minimum value for various crimes in London and the four quartiles - 25%, 50%, 75%, and 100%. For each quartile, the value represents the percentage of values that are less than or equal to that number.
+
+13. Quartiles
+We can see that 75% of London boroughs had less than 4392 burglaries in the last two years. Note that the second quartile is the middle value, so it is equal to the median.
+
+14. Box plots
+We can visualize quartiles using a box plot. The left edge of the box is the first quartile, the middle line is the median, and the right edge of the box is the third quartile. Extreme values are shown beyond the horizontal lines, such as the dot above 4000.
+
+15. Interquartile range (IQR)
+Another measure of spread is the interquartile range, or IQR. It is the distance between the first and third quartiles. For robberies in London, the IQR is around 1080, meaning the middle 50% of boroughs still differ by 1080 robberies. The benefit of the IQR is that is less affected by extreme values than other measures of spread such as the standard deviation.
+
+
+LESSON 2
+
+
+Got It!
+1. What are the chances?
+People often talk about chance, like what are the chances of closing a sale, of rain tomorrow, or of winning a game? Accurately estimating the chance of an event outcome can be hugely beneficial in many areas of life! But how exactly do we measure chance?
+
+2. Measuring chance
+We can use probability. We calculate the probability of some event by taking the number of ways the event can happen and dividing it by the total number of possible outcomes. For example, if we flip a coin, it can land on either heads or tails. To get the probability of the coin landing on heads, we divide the one way to get heads by the two possible outcomes, heads and tails. This gives us one-half or a fifty percent chance of getting heads. Probability is always between zero and 100 percent. If the probability of something is zero, it's impossible, and if the probability is 100%, it will certainly happen.
+
+3. Assigning salespeople
+Let's look at a more practical scenario. There's a meeting coming up with a potential client, and we want to send someone from the sales team to attend. We'll put each person's name in a box and select one randomly to decide who goes to the meeting. This is known as sampling, as we take a sample from the names in the box.
+
+4. Assigning salespeople
+Brian's name gets selected. The probability of choosing Brian is one in four, or 25%.
+
+5. Morning meeting
+What if we have two meetings at different times? Then we can randomly select any of our four team members for each meeting. This means the name picked for the first meeting does not affect the chances of selecting that person again for the second meeting. For example, if Brian's name is selected for a meeting in the morning,
+
+6. Afternoon meeting
+the probability that Brian is picked for a meeting in the afternoon remains 25%. This is called sampling with replacement, as the sample is placed back into the selection and can be chosen again.
+
+7. Independent probability
+This is an example of independent probability, where the probability of an event does not change based on the outcome of a previous event.
+
+8. Online retail sales
+We will explore one more example using an online retail sales dataset. Here is a preview of the first five rows to familiarize ourselves: Each row contains an order. Product Type is the category of the product sold in that order, with values such as Basket or Jewelry. Each order is for a single product type. Net Quantity is the number of products sold in the order. Gross Sales is the number of dollars generated for the order, and Discounts is the dollar value deducted from the sale. Returns is the number of dollars given back to the customer due to returned items, and Net Sales is the total amount of dollars generated by the order after factoring in discounts and returns.
+
+1 Image credit: https://unsplash.com/@rodriguezedm
+9. Probability of an order for a jewelry product
+So, what if we want to find the probability that the next order will be for a jewelry product? We can group all orders by product type and count the number of orders for each product. Here are the five most popular product types based on the number of orders for each type. There are lots of orders for small quantities of other products that are not displayed, but the total number of orders, 1767, is included at the bottom of the table.
+
+10. Probability of an order for a jewelry product
+To find the probability of the next order being for a jewelry product we divide the number of orders for jewelry products by the total number of orders. There were 1767 orders, of which 210 were for jewelry products, so we divide 210 by 1767. The probability of the next order being for a jewelry product is just under 12%.
+
+11. Probabilities for all product types
+We can repeat this process for all product types to see the chance of the next order being for a given product type. Here are the probabilities of receiving an order for any of the five most popular product types!
+
+12. Let's practice!
+What are the chances we will enjoy the next couple of exercises?
+
+LESSON 3
+
+1. Discrete distributions
+Now we will look at probability distributions.
+
+2. Rolling the dice
+Let's consider rolling a standard, six-sided die.
+
+3. Rolling the dice
+There are six possible outcomes and each has a one-sixth chance of occurring. This is an example of a probability distribution.
+
+4. Choosing salespeople
+This is similar to our earlier scenario, except we had names instead of numbers. Just like rolling a die, each outcome, or name, had an equal chance of occurring.
+
+5. Probability distribution
+A probability distribution describes the probability of each possible outcome in a scenario. We can also find the expected value of a distribution, which is the mean. We calculate this by multiplying each value by its probability, one-sixth in this case, and adding everything together. So the expected value of rolling a fair die is three-point-five.
+
+6. Why are probability distributions important?
+Why is it important to understand probability distributions. Well, they help us to quantify risk and inform decision making. Also, as we will see later in the course, probability distributions are used in hypothesis testing to understand whether results may have occurred by chance.
+
+1 Image credit: https://unsplash.com/@timmossholder
+7. Visualizing a probability distribution
+We can visualize a probability distribution using a histogram, where each bar represents an outcome, and each bar's height represents the probability of that outcome.
+
+8. Probability = area
+We can calculate probabilities of different outcomes by taking areas of the probability distribution. For example, what's the probability that our die roll is less than or equal to two? To figure this out, we'll take the area of each bar representing an outcome of two or less.
+
+9. Probability = area
+Each bar has a width of one and a height of one-sixth, so the area of each bar is one-sixth. Summing the areas for one and two, we get a probability of one-third.
+
+10. Uneven die
+Now let's say we have a die where the two got turned into a three. This means we now have a zero percent chance of getting a two, and a 33% chance of getting a three. To calculate the expected value of this die, we now multiply two by zero, since it's impossible to get a two, and three by its new probability, one-third. This gives us an expected value of three-point-six-seven.
+
+11. Visualizing uneven probabilities
+When we visualize these new probabilities, the bars are no longer even.
+
+12. Adding areas
+With this die, what's the probability of getting something less than or equal to two? There's a one-sixth probability of getting one, and zero probability of getting two,
+
+13. Adding areas
+which sums to one sixth.
+
+14. Discrete probability distributions
+The probability distributions we've seen so far are discrete, since they represent situations with discrete outcomes. Therefore, they represent count or interval data. In the case of a die, we're counting dots, so we can't roll a one-point-five or four-point-three. When all outcomes have the same probability, like a fair die, this is called a discrete uniform distribution.
+
+15. Sampling from a discrete distribution
+Just like we sampled names from a box, we can do the same thing with dice rolls. Here are the potential outcomes of a roll. Its expected value is three-point-five. If we roll a die 10 times we are sampling with replacement as we can get the same result more than once. Here four rolls produced a two.
+
+16. Visualizing a sample
+We can visualize the outcomes of the 10 rolls using a histogram.
+
+17. Sample distribution vs theoretical distribution
+As the sample was random we have different numbers, despite there being the same probability of rolling each number. The mean of our sample is three-point-zero, which isn't super close to the three-point-five we were expecting.
+
+18. A bigger sample
+If we roll the die 100 times, the distribution of the rolls looks a bit more even, and the mean is closer to 3-point-5.
+
+19. An even bigger sample
+If we roll 1000 times, it looks even more like the theoretical probability distribution and the mean closely matches 3-point-5.
+
+20. Law of large numbers
+This is called the law of large numbers! If we increase the size of the sample then its mean will approach the theoretical mean.
+
+
+LESSON 4 
+
+1. Continuous distributions
+We can use discrete distributions to model situations that involve count or interval data, but how can we model continuous data?
+
+2. Waiting for the bus
+Let's start with an example. The city bus arrives every 12 minutes, so if we show up at a random time, we could wait anywhere from zero minutes if we arrive just as the bus pulls in, up to 12 minutes if we arrive as the bus leaves.
+
+3. Continuous uniform distribution
+Let's model this scenario with a probability distribution. There are an infinite number of minutes we could wait since we could wait five minutes, one-point-five minutes, one-point-five-three minutes, and so on. Therefore, we can't create individual blocks like we could with count or interval data.
+
+4. Continuous uniform distribution
+Instead, we'll use a continuous line to represent probability. The line is flat since there's the same probability of waiting any time from zero to 12 minutes. This is called the continuous uniform distribution.
+
+5. Probability still = area
+Now that we have our distribution, let's figure out the probability that we'll wait between four and seven minutes. Just like with discrete distributions, we can take the area from four to seven to calculate probability.
+
+6. Probability still = area
+The width of this rectangle is seven minus four, which is three. The height is one-twelfth.
+
+7. Probability still = area
+Multiplying those together to get area, we get three-twelfths or 25%.
+
+8. Waiting seven minutes or less
+What about the probability of waiting seven minutes or less. We can think of this as a space within the total area where the upper limit is seven minutes and the lower limit is zero minutes. To calculate the probability we subtract the lower limit, in this case, zero out of a possible twelve minutes, from the upper limit, which is seven out of a possible twelve minutes. Seven minus zero is seven. We divide the result of this by the total area under the line, which is the maximum possible time we might wait, which is twelve. So the probability of waiting seven minutes or less for the bus is seven-twelfths, or approximately 58-point-three percent.
+
+9. Total area = 1
+To find the probability of waiting anywhere between zero and 12 minutes, we multiply 12 by one-twelfth, which is one,
+
+10. Total area = 1
+or 100%. This makes sense since we're certain we'll wait anywhere from zero to 12 minutes.
+
+11. Probability of waiting more than seven minutes
+So if we know the total probability is one, and the probability of waiting seven minutes or less is 58-point-three percent, then we can use this to find the probability of waiting more than seven minutes. We simply subtract the probability of waiting seven minutes or less from the total probability. So, one minus seven-twelfths equals five-twelfths, or around 42 percent.
+
+12. Bimodal distribution
+Continuous distributions can take forms other than uniform, where some values have a higher probability than others. For example, here we can see a distribution with two values occurring most frequently. This is known as the bimodal distribution, as there are two modes. An example of the bimodal distribution is book prices, with different typical values occurring depending on whether the book is a paperback or a hardback.
+
+13. The normal distribution
+Another continuous distribution has a peak in the middle, with symmetrical slopes as values move away from the center in either direction. This is often described as a bell-shaped curve and referred to as the normal distribution. It is very common to observe this distribution, such as with blood pressure or retirement age. We will learn more about this special distribution later in the course.
+
+14. Total area still = 1
+Regardless of the shape of the distribution, the area beneath it must alway equal one, as the area covers 100% of possible outcomes.
+
+
+CHAPTER 3
+
+LESSON 1
+
+1. The binomial distribution
+Now let's learn about another distribution - the binomial distribution.
+
+2. Coin flipping
+We'll start by flipping a coin, which has two possible outcomes, heads or tails, each with a probability of fifty percent.
+
+3. Binary outcomes
+This is an example of a binary outcome, where two possible values can occur. We could also represent these outcomes as a one or a zero, a success or a failure, and a win or a loss.
+
+4. One coin flip many times
+We can perform multiple flips of a single coin and log the results, such as here where heads is represented as a one, and tails as a zero.
+
+5. Binomial distribution
+The binomial distribution describes the probability of the number of successes in a sequence of independent events. For example, it can tell us the probability of getting some number of heads in a sequence of coin flips. Note that this is a discrete distribution since we're working with a countable outcome. The binomial distribution can be described using two parameters, n and p. n represents the total number of events being performed, and p is the probability of success, in this case, heads.
+
+6. Binomial distribution
+Here's what the distribution looks like for 10 coin flips. We have the biggest chance of getting five heads, and a much smaller chance of getting zero or 10 heads.
+
+7. Probability of 7 or fewer heads
+As with other distributions, we can calculate the probability of outcomes by adding together the area. If we want the probability of getting seven or fewer heads from 10 flips, we add up the probability of rolling zero heads, one head, two heads and so on up to and including seven heads. There is a ninety-four-point-five percent probability of rolling seven or fewer heads.
+
+8. Probability of 8 or more heads
+Likewise, to calculate the probability of eight or more heads, we can subtract the probability of seven or fewer heads from the total probability, or one. This gives a result of around five-point-five percent probability.
+
+9. Expected value
+The expected value of the binomial distribution can be calculated by multiplying n by p. The expected number of heads from flipping 10 coins is 10 times zero-point-five, which is five. If we don't know p, but know n and the expected value, we can calculate p through dividing the expected value by n.
+
+10. Independence
+In order for the binomial distribution to apply, each event must be independent, so the outcome of one event shouldn't have an effect on the next. For example, if we're picking randomly from these cards with zeros and ones, we have a 50-50 chance of getting a zero or a one. If probabilities change based on the outcome of a prior event, the binomial distribution does not apply.
+
+11. Independence
+But if we're sampling without replacement, the probabilities for the second event are different due to the outcome of the first event. Since these events aren't independent, we can't calculate accurate probabilities for this situation using the binomial distribution.
+
+12. General applications
+The binomial distribution can be used in any scenario where independent events produce binary outcomes, and does not require equal probability for each outcome. Examples include clinical trials measuring effectiveness of a drug, where the outcome is whether the drug worked or not, or betting on the result of a sports match, where the bettor can either win or lose.
+
+1 Image credit: https://unsplash.com/@towfiqu999999
+13. Let's practice!
+Time to explore binary outcomes using the binomial distribution.
+
+
+
+LESSON 2
+
+1. The normal distribution
+The next probability distribution we'll discuss is the normal distribution, which is a continuous probability distribution. It's one of the most important probability distributions we'll learn about since several statistical methods rely on it, and it applies to more real-world situations than the distributions we've covered so far.
+
+2. What is the normal distribution?
+The normal distribution looks like this. Its shape is commonly referred to as a bell curve. This distribution has a few important properties.
+
+3. Symmetrical
+First, it's symmetrical, so the left side is a mirror image of the right.
+
+4. Area = 1
+Second, just like any probability distribution, the area beneath the curve equals one.
+
+5. Curve never hits 0
+Third, the probability never hits zero, even if it looks like it at the tail ends. For example, the chances of getting a value above 10 in this distribution is less than zero-point-five percent, but it is possible!
+
+6. Described by mean and standard deviation
+The normal distribution is described by its mean and standard deviation. Here is a normal distribution with a mean of 20 and standard deviation of three, and here is a normal distribution with a mean of zero and a standard deviation of one. Notice how both distributions have the same shape, but their axes have different scales.
+
+7. Areas under the normal distribution
+For the normal distribution, 68% of the area is within one standard deviation of the mean.
+
+8. Areas under the normal distribution
+95% of the area falls within two standard deviations of the mean,
+
+9. Areas under the normal distribution
+and 99-point-7% of the area falls within three standard deviations. This is sometimes called the 68-95-99-point-seven rule.
+
+10. Why is the normal distribution important?
+So why is the normal distribution important? Firstly, lots of real-world data closely resembles the normal distribution. For example, here is a histogram showing the percentage of schools in each region of the United Kingdom achieving pass grades for end of secondary school exams. Drawing a line over the shape of the histogram closely resembles the normal distribution. Secondly, in hypothesis testing our data must follow a normal distribution in order to perform many statistical tests, such as comparing the mean of a sample to the population it represents.
+
+1 Data source: https://data.gov.uk/dataset/ec1efd76-d6ad-4594-9b4d-944aa4170e63/gcse-english-and-maths-results-by-ethnicity
+11. Skewness
+When interpreting the distribution of data we often use the term skewness, which describes the direction that the data tails off. For example, the plot on the left peaks on the left and tails off to the right, so we describe the distribution as positive skewed, or right skewed, as the tail is on the right where larger positive values are. Conversely, a negative skewed, or left skewed distribution peaks on the right and tails off to the left. It is very common to observe skewness in real-world data such as household income, which is typically positive skewed due to some households earning much more than the typical income.
+
+12. Kurtosis
+We can also interpret a distribution by its kurtosis, which is a way of describing the occurrence of extreme values in a distribution. There are three types of kurtosis.
+
+13. Kurtosis
+The first is positive kurtosis, also known as leptokurtic, which is characterized by a large peak around the mean and smaller standard deviation, shown here in red. A mesokurtic distribution is the term used to describe the normal distribution, which is shown as the blue curve in the plot. Lastly, negative kurtosis, also known as platykurtic, describes a distribution with a lower peak and larger standard deviation, as highlighted in green here.
+
+
+LESSON 3
+
+1. The central limit theorem
+Now that we're familiar with the normal distribution, it's time to learn about what makes it so important.
+
+2. Rolling a die five times
+Let's go back to our dice rolling example. We can roll a six-sided fair die five times and record the results Now, we'll take the mean of the five rolls, which gives us two.
+
+3. Rolling a die five times
+If we roll another five times and take the mean, we get a different mean. And if we do it again, we get another mean.
+
+4. 10 sets of five die rolls
+We can repeat this 10 times: we'll roll a die five times, take the mean of that set of five rolls, and repeat 10 times. Here are the results, showing the mean from each set of five rolls.
+
+5. Sampling distributions
+We can plot these means too. A distribution of a summary statistic such as the mean is called a sampling distribution. This distribution, specifically, is a sampling distribution of the sample mean.
+
+6. 100 sample means
+We can repeat this process to take 100 sample means. If we look at the new sampling distribution, its shape somewhat resembles the normal distribution, even though the distribution of outcomes for each individual die roll is uniform.
+
+7. 1000 sample means
+Let's take 1000 means. This sampling distribution more closely resembles the normal distribution.
+
+8. 10000 sample means
+The shape stays consistent at ten thousand sample means,
+
+9. 100000 sample means
+one hundred thousand sample means,
+
+10. One million sample means
+and one million sample means!
+
+11. Central limit theorem
+This phenomenon is known as the central limit theorem, which states that a sampling distribution will approach a normal distribution as the size of the sample increases. In our example, the sampling distribution became closer to the normal distribution as we took more and more sample means. It's important to note that the central limit theorem only applies when samples are taken randomly and are independent, for example, randomly picking sales deals with replacement. Generally, a sample size of at least 30 is required for the central limit theorem to apply.
+
+12. Standard deviation and the CLT
+The central limit theorem, or CLT, applies to other summary statistics as well. If we take the standard deviation of five rolls 100000 times, the sample standard deviations are distributed normally, centered around one-point-nine, which is the distribution's standard deviation.
+
+13. Proportions and the CLT
+Another statistic that the central limit theorem applies to is proportion. Let's sample from a die five times with replacement and see how many times we roll a four. In this case, 20% of rolls were a four. If we sample again, 60% of rolls are a four.
+
+14. Sampling distribution of proportion
+If we repeat this 1000 times and plot the distribution of fours rolled in each sample, it resembles a normal distribution centered around zero-point-one-six, since there is a one in six chance of rolling a four.
+
+15. Mean of the sampling distribution
+Since these sampling distributions are normal, we can take their mean to get an estimate of a distribution's mean, standard deviation, or proportion. Here we can see our distribution of one thousand sample means, with a red dotted line showing the theoretical mean for a dice roll of three-point-five. We've also included the sample mean as a green dotted line, which is three-point-five-three. This is an example of the law of large numbers in action! With our die rolling examples we know what the underlying distributions look like for the mean, standard deviation, and proportions, but if we don't, this can be a useful method for estimating characteristics of an underlying distribution.
+
+16. Benefits of the central limit theorem
+The central limit theorem also comes in handy when we have a huge population and don't have the time or resources to collect data on everyone. Instead, we can collect smaller samples and create a sampling distribution to estimate summary statistics.
+
+
+LESSON 4
+
+
+1. The Poisson distribution
+In this video, we'll talk about another probability distribution called the Poisson distribution.
+
+2. Poisson processes
+Before we talk about probability, let's define a Poisson process. A Poisson process is a process where the average number of events in a given time period is known, but the time or space between events is random. Poisson processes are very common in our day-to-day lives! For example, the number of animals adopted from an animal shelter each week is a Poisson process - we may know that on average there are eight adoptions per week, but the time between adoptions can differ randomly. Other examples would be the number of people arriving at a restaurant each hour, or the number of visits to a company's website in a day. Understanding Poisson processes can be extremely valuable in a range of settings!
+
+1 Image credit: https://unsplash.com/@rodlong
+3. Poisson distribution
+The Poisson distribution describes the probability of some number of events happening over a fixed period of time. We can use the Poisson distribution to calculate the probability of at least five animals getting adopted in a week, the probability of 12 people arriving at a restaurant in an hour, or the probability of fewer than 200 visits to a company's website in a day.
+
+4. Lambda ($\lambda$)
+The Poisson distribution is described by a value called lambda, which represents the average number of events per time period. In the restaurant example, this would be the average number of patrons per hour, which is 20. This value is also the expected value of the distribution! A Poisson distribution of sample size 200 and lambda equal to 20 looks like this. Notice that it's a discrete distribution since we're counting events, and 20 is the most likely number of patrons to visit in an hour.
+
+5. Lambda is the distribution's peak
+Lambda changes the shape of the distribution. Using our restaurant patrons per hour example, we can see a Poisson distribution with lambda equals 10, in green, represents a typical value of 10 patrons per hour. This looks quite different to a Poisson distribution with lambda equals 20, in blue, or lambda equals 50, in red, but no matter what, the distribution's peak is always at its lambda value.
+
+6. Central limit theorem still applies!
+Just like other distributions, if we have a large number of samples and calculate the mean for each, then the distribution of sample means of a Poisson distribution looks like the normal distribution!
+
+7. Probability of 13 patrons in an hour
+We can calculate the probability of a specific number of patrons visiting a restaurant by measuring the height of the bar representing that value. For example, the probability of exactly 13 patrons visiting the restaurant in an hour, given the average is 20 patrons, is two-point-seven-one percent.
+
+8. Probability of 25 or more patrons
+Likewise, to calculate the probability of at least 25 patrons visiting in an hour we can add up the heights of all the bars from 25 onwards. In this case, the probability is just over 11 percent.
+
+
+Chapter 4
+
+LESSON 1
+
+1. Hypothesis testing
+Welcome to the final chapter of the course, where we'll talk about correlation and hypothesis testing. Let's start with hypothesis testing.
+
+2. Why do we need to know about hypothesis testing?
+Hypothesis testing is a group of theories, methods, and techniques to compare populations. So why do we need to know about hypothesis testing? Firstly, it is routinely used in many industries. For example, a company may have a theory that increasing the price of their product will increase revenue, or changing the name of a website might increase traffic. We can even use hypothesis testing to analyze whether a medication is effective in the treatment of specific health conditions!
+
+1 Image credit: https://unsplash.com/@towfiqu999999
+3. The history of hypothesis testing
+Not only is hypothesis testing all around us, but it is also a well-established discipline! Early origins can be traced to the 18th century when the analysis of birth records showed that each birth has a slightly larger probability of being male than female!
+
+1 Image credit: https://unsplash.com/@kellysikkema
+4. Assume nothing!
+In hypothesis testing, we always start with an assumption that no difference exists between the populations. We do this to reduce the risk of introducing any bias into our testing. This is called the null hypothesis. We can expand on the example of male to female birth ratio to look at vitamin C supplements. Our null hypothesis could be that there is no difference in gender birth ratio between women who do and do not take vitamin C supplements. We then create an alternative hypothesis, which can typically take one of two forms. We can say that there is a difference between male and female births among women taking vitamin C supplements versus those who do not. Or we can state the direction of the difference, for example, that the population taking vitamin C supplements have more female births than those not taking the supplements.
+
+5. Hypothesis testing workflow
+There are many ways to perform hypothesis testing, but a general workflow is: First, we decide on populations we want to analyze the difference between, in this case adult women using or not using vitamin C supplements. Then, we develop null and alternative hypotheses, that births are equally likely to be male or female in both populations, or that babies are more likely to be female in women taking vitamin C supplements. Now we collect our sample data. Specifically, we collect gender status of babies born in both populations. We then perform statistical tests on the sample data. Finally, we use the results to draw conclusions about the population that the sample represents.
+
+6. How much data do we need?
+So how many births do we need to record the gender of? Applying the central limit theorem, with a larger sample size the mean number of male and female births approaches the population means. However, collecting large samples can take a lot of time and resources! A common approach is to look at peer-reviewed research on similar hypothesis tests to find out how large the samples were. This can then serve as a benchmark.
+
+1 Image credit: https://unsplash.com/@jxnsartstudio
+7. Independent and dependent variables
+A note on terminology. In hypothesis testing, we define the data in terms of the difference we expect to observe in the alternative hypothesis. The independent variable describes data we expect will not be affected by other data. For our vitamin C and gender birth ratio hypothesis test, this would be vitamin C supplementation, meaning it is independent of male to female birth ratio. The dependent variable is the data we expect to be affected by other values. In the alternative hypothesis, we propose that birth gender ratio will be affected by vitamin C supplementation, thus it is dependent on vitamin C. These terms are commonly used when describing the results of hypothesis tests, as well as when visualizing results such as on a scatter plot, where the independent variable is always on the x-axis and the dependent variable is on the y-axis.
+
+
+LESSON 2
+
+1. Experiments
+Now we know the general workflow for hypothesis testing, we'll discuss one arm of hypothesis-testing - experiments.
+
+2. Experiments, treatment, and control
+Experiments are a subset of hypothesis testing that involves performing statistical tests on sample data to draw conclusions about a population. This doesn't just apply to academia and research; experiments occur in industry too, particularly to draw product insights and drive improvements to commercial performance. Experiments generally aim to answer a question in the form, "What is the effect of the treatment on the response?", where the treatment refers to the independent variable, and the response to the dependent variable.
+
+1 Image credit: https://unsplash.com/@nci
+3. Advertising as a treatment
+As an example of an experiment, we may wish to know what effect an advertisement has on the number of products purchased. In this case, the treatment is an advertisement, and the response is the number of products purchased. Visualizing the results using a bar plot suggests the treatment may have been effective in increasing the number of products purchased.
+
+4. Controlled experiments
+A common type of experiment is a controlled experiment, where participants are randomly assigned to either the treatment group or the control group. In our example, the treatment group will see an advertisement and the control group will not. Other than this difference, the groups should be comparable so that we can determine whether seeing an advertisement causes people to buy more. If the groups aren't comparable, we may draw incorrect conclusions based on the results. If the average age of participants in the treatment group is 25 and the average age of participants in the control group is 50, age could potentially influence the results, where younger people are more likely to purchase more, making the experiment biased towards the treatment.
+
+5. The gold standard of experiments
+The gold standard, or ideal experiment, will eliminate as much bias as possible. The first method to help eliminate bias in controlled experiments is to use randomization. In this experiment protocol, participants are assigned to the treatment or control group randomly, not due to some characteristics. Randomization helps ensure that the groups are comparable. This is called a randomized controlled trial. The second method is to use blinding. In a blind trial, the participants don't know if they're in the treatment or control group. This ensures that the effect of the treatment is due to the treatment itself, not the idea of getting the treatment. This can involve using a placebo, which is something that resembles the treatment but has no effect. This is common in clinical trials that test the effectiveness of a drug, where the control group will be given a sugar pill that has minimal effects on the response.
+
+6. The gold standard of experiments
+In a double-blind randomized controlled trial, the person administering the treatment or running the experiment also doesn't know whether they're administering the actual treatment or a placebo. This protects against bias in the response as well as the analysis of the results. These different tools all boil down to the same principle: the fewer the opportunities for bias to creep into our experiment, the more reliably we can conclude whether the treatment affects the response.
+
+7. Randomized Controlled Trials vs. A/B testing
+Randomized controlled trials can have multiple treatment groups if the aim is to test the difference between multiple treatments, such as different dosage of a medication. They are popular in academia, particularly within scientific and clinical research. However, randomized controlled trials are also referred to as A/B testing, often when used in industries such as marketing and engineering. The difference is that A/B testing only splits participants into two groups - treatment and control.
+
+1 Image credits: https://unsplash.com/@towfiqu999999; https://unsplash.com/@thisisengineering
+
+
+LESSON 3 
+
+1. Correlation
+We've talked about relationships between variables; now let's look at one way to measure relationships - correlation.
+
+2. Relationships between two variables
+Recall that we can use a scatter plot to visualize relationships. Here we plot the costs of water versus gym memberships in different cities. It's hard to determine whether a clear relationship exists between these two variables.
+
+3. Pearson correlation coefficient
+This is where the Pearson correlation coefficient, often referred to as the correlation coefficient, comes in handy. It was developed by Karl Pearson and published back in 1896! It quantifies the strength of a relationship between two variables, producing a value between minus one and one. This number corresponds to the strength of the relationship between the variables, and the sign, positive or negative, corresponds to the direction of the relationship.
+
+1 https://royalsocietypublishing.org/doi/10.1098/rsta.1896.0007
+4. Linear relationships
+Note that the Pearson correlation coefficient can only be used for linear relationships, meaning changes between variables are proportionate. For example, let's say that a bottle of water costs one dollar and the monthly price of a gym membership is twenty dollars in London. If water costs twice as much in Paris then a gym membership should cost 40 dollars.
+
+5. Values = strength of the relationship
+Here's a scatterplot of two variables, x and y, that have a correlation coefficient of zero-point-nine-nine. The data is closely clustered around a diagonal line, so we describe this as a near-perfect or very strong relationship. If we know the value of x, we'll have a good idea of what the value of y could be.
+
+6. Values = strength of the relationship
+Comparing this to a correlation coefficient of zero-point-seven-five, the data points still trend up and to the right, but are more spread out.
+
+7. Values = strength of the relationship
+This plot shows a correlation of zero-point-five-six, which would be considered a moderate relationship.
+
+8. Values = strength of the relationship
+A correlation coefficient around zero-point-two would be considered a weak relationship.
+
+9. Values = strength of the relationship
+When the correlation coefficient is close to zero, x and y have no relationship and the scatterplot looks completely random. This means that knowing the value of x doesn't tell us anything about the value of y.
+
+10. Sign = direction
+The sign of the correlation coefficient corresponds to the direction of the relationship. A positive correlation coefficient indicates that as x increases, y also increases. A negative correlation coefficient indicates that as x increases, y decreases.
+
+11. Gym costs vs. water costs
+Given what we now know about correlation, what do we think the correlation coefficient is between water costs and gym costs? Well, there isn't a clear line, suggesting it isn't a very strong relationship, but the values both tend to increase together. So, perhaps there is a weak-to-moderate positive correlation.
+
+12. Adding a trendline
+A trendline makes it easier to visualize the relationship. The Pearson correlation coefficient is zero-point-three-five, confirming a weak to moderate positive relationship between the cost of a gym membership and the cost of a bottle of water.
+
+13. Life expectancy vs. cost of a bottle of water
+Be careful when interpreting the relationship between variables using the correlation coefficient. Here is a plot of life expectancy and the cost of a bottle of water. There is a correlation coefficient of zero-point-six-one, suggesting a moderate positive relationship.
+
+14. Correlation does not equal causation
+Does this mean increasing the cost of water will increase life expectancy? Well, it is important to distinguish that just because a relationship exists, it doesn't mean that changes in water costs will result in a change in life expectancy. A popular phrase among statisticians is that correlation does not equal causation.
+
+1 Image credit: https://unsplash.com/@micheile; https://unsplash.com/@jon_chng
+15. Confounding variables
+When looking at relationships among data, it is important to ask what else might be affecting the values. The cost of a bottle of water is typically higher in locations with stronger economies, and they may offer better access to high quality healthcare. So perhaps life expectancy is not affected by the cost of a bottle of water, it is actually affected by the strength of the economy. This is known as a confounding variable, which is something that affects the data we are analyzing, but was not accounted for when assessing the relationship between variables.
+
+LESSON 4
+
+1. Interpreting hypothesis test results
+Now let's talk about how to interpret hypothesis test results!
+
+2. Life expectancy in Chicago vs. Bangkok
+Suppose we want to test if there is a difference in life expectancy in Chicago and Bangkok. Our null hypothesis is that no difference exists, and our alternative hypothesis could be that Chicago residents have a longer life expectancy than Bangkok residents.
+
+3. Sampling distribution
+We can collect data on the age of death from 100 residents each in Chicago and Bangkok. This histogram shows the life expectancy sample distributions for each city. The mean life expectancy of the Chicago sample is 79-point-three, and for Bangkok it's 73-point-nine. But how do we know these are the actual mean values for each population?
+
+4. Different samples
+We could collect age of death data from 100 more residents in each city. This time we get different results. So, are we sure that a difference in life expectancy really exists, or are the results due to chance? Put another way, do the samples truly represent these populations?
+
+5. Sampling distribution of mean life expectancy
+We can't collect entire population data, so one approach is to perform sampling with replacement on our original data from each city and calculate the mean life expectancy for each sample. Repeating this 10000 times and visualizing the results, we can see normal distributions for mean life expectancy in Bangkok and Chicago, and Chicago has a larger expected value! So, can we now conclude that a difference in life expectancy truly exists?
+
+6. p-value
+When drawing conclusions in hypothesis testing we use a metric called a p-value. This is the probability of achieving a result at least as extreme as the one we have observed, assuming the null hypothesis is true. Suppose we want to know the probability of a sample mean for Chicago life expectancy being more than or equal to 82, given a population mean of 79-point-three. We can visualize the sample means distribution and look at the total area from 82 onwards to determine the p-value of zero-point-zero-three-seven, meaning there is a three-point-seven percent chance of observing a mean life expectancy of 82 or more.
+
+7. p-value
+We can visualize the p-value for our two sample mean distributions as the total area that overlaps between them. So, how small an overlap is needed to be confident in our conclusion?
+
+8. Significance level ($\alpha$)
+To reduce the risk of drawing a false conclusion, we set a probability threshold for falsely rejecting the null hypothesis. This probability threshold is known as alpha or the significance level. It is decided before collecting data to minimize bias, as a researcher may choose a different threshold after they've seen the data so that they can draw a conclusion that serves their interests. A typical value for this is zero-point-zero-five, meaning there is a five percent chance of wrongly concluding that Chicago residents live longer than Bangkok residents. After data collection, we look at whether the p-value is less than or equal to alpha. If the p-value meet this criterion we can feel confident in rejecting the null hypothesis. If this occurs we describe the results as being statistically significant.
+
+9. Type I/II error
+In hypothesis testing there are four potential conclusions we can make based on the null hypothesis. We can wrongly reject our null hypothesis when it was actually true. This is known as a type one error.
+
+10. Type I/II error
+We can wrongly accept our null hypothesis when it's false. This is known as a type two error.
+
+11. Type I/II error
+We can correctly accept the null hypothesis when it's true,
+
+12. Type I/II error
+and we can correctly reject the null hypothesis when it's false.
+
+13. Drawing a conclusion
+Having set alpha, we can now draw a conclusion based on our sample mean distributions. The overlap of distributions accounts for less than our threshold for alpha, zero-point-zero-five, meaning the likelihood of the difference in mean life expectancy between the two cities occurring by chance is less than five percent. Therefore, we can reject the null hypothesis and reasonably conclude that the mean life expectancy in Chicago is higher than in Bangkok!
